@@ -87,8 +87,8 @@ const RSS_SOURCES = {
   gaming: [
     { name: 'Game Developer', url: 'https://www.gamedeveloper.com/rss.xml' },
     { name: 'Polygon', url: 'https://www.polygon.com/rss/index.xml' },
-    { name: 'Gamasutra', url: 'https://www.gamedeveloper.com/rss.xml' },
     { name: 'GamesIndustry', url: 'https://www.gamesindustry.biz/feed' },
+    { name: 'Kotaku', url: 'https://kotaku.com/rss' },
   ],
   ai: [
     { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/' },
@@ -232,6 +232,15 @@ function parseRSS(xml, category) {
   return items;
 }
 
+// 打乱数组顺序
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 // 获取 RSS 内容
 function fetchRSS(url) {
   return new Promise((resolve, reject) => {
@@ -273,22 +282,29 @@ async function fetchContent() {
     const name = category === 'gaming' ? '游戏' : category === 'ai' ? 'AI' : '高尔夫';
     console.log(`📥 采集 ${emoji} ${name} 板块...`);
     
+    const allItems = [];
+    
     for (const source of sources) {
       try {
         const xml = await fetchRSS(source.url);
         const items = parseRSS(xml, category);
         
-        items.forEach(item => item.source = source.name);
-        content[category].push(...items);
+        // 每个源只取 4 条，确保多样性
+        const limitedItems = items.slice(0, 4);
+        limitedItems.forEach(item => item.source = source.name);
+        allItems.push(...limitedItems);
         
-        console.log(`   ✅ ${source.name}: ${items.length} 篇`);
+        console.log(`   ✅ ${source.name}: ${limitedItems.length} 篇`);
       } catch (e) {
         console.log(`   ⚠️ ${source.name} 失败`);
       }
     }
     
-    // 每个板块限制 10 条
-    content[category] = content[category].slice(0, 10);
+    // 打乱顺序，混合多个源的内容
+    shuffleArray(allItems);
+    
+    // 取前 10 条
+    content[category] = allItems.slice(0, 10);
     
     // 高尔夫备用内容
     if (category === 'golf' && content.golf.length < 5) {

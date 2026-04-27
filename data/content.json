@@ -1,6 +1,42 @@
 {
   "gaming": [
     {
+      "title": "用于判断游戏是否中断的工具",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/tools-to-tell-if-your-game-is-broken",
+      "excerpt": "Matthew Tighe的公司Do Games在过去十年中大部分时间都在将游戏移植到游戏机上，包括Cult of the Lamb和Art of Rally等游戏。他的新事业Gameworks旨在利用从这项工作中收集的所有知识，并将其应用于让开发人员的生活变得更加轻松",
+      "publishedAt": "2026-04-24T16:59:30.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://assetsio.gnwcdn.com/PerfCop-Dashboard_edited.png?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "title": "Bulletstorm dev People Can Fly获得冷却游戏",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/bulletstorm-dev-people-can-fly-acquires-cooldown-games",
+      "excerpt": "总部位于华沙的开发商People Can Fly以未披露的价格收购了冷却游戏。阅读更多",
+      "publishedAt": "2026-04-27T07:46:59.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": true,
+      "image": "https://assetsio.gnwcdn.com/pcf-cooldown.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "title": "“比以往任何时候都更多的慈善机构正在寻找游戏” ： Meet Cause + Select ，将游戏行业与顶级慈善机构联系起来的平台",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/more-charities-than-ever-are-looking-at-games-meet-causeselect-the-platform-linking-the-games-industry-to-top-charities",
+      "excerpt": "视频游戏行业对慈善事业并不陌生。GamesAid和SpecialEffect等行业组织历史悠久，此外还有快速运行的活动Games Done Quick、Yogscast的Jingle Jam和Humble Bundle （由GamesIndustry.biz母公司IGN Entertainment拥有）",
+      "publishedAt": "2026-04-26T23:47:01.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://assetsio.gnwcdn.com/cause-select.png?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
       "title": "Clair Obscur ： Expedition 33全球销量突破800万",
       "source": "Game Developer",
       "url": "https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide",
@@ -11,6 +47,18 @@
       ],
       "isFeatured": true,
       "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt91fa6c5cf153b000/69eb7b53d9eb8a86b83cb444/Clair_Obscur.png?width=1280&auto=webp&quality=80&disable=upscale"
+    },
+    {
+      "title": "播客：使命召唤、游戏通行证和马里奥电影",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/podcast-call-of-duty-game-pass-and-the-mario-movie",
+      "excerpt": "今天是星期五，所以我们有另一集前阿尔法GamesIndustry.biz播客。我再次与刘易斯·帕克伍德（ Lewis Packwood ）一起讨论了本周的主要问题，即Xbox ：具体来说，就是决定退出《使命召唤》游戏通行证并降低其价格。这是一个重大的决定，我们",
+      "publishedAt": "2026-04-24T17:19:48.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://assetsio.gnwcdn.com/Gi24_Podcast_Holding_Dev1_sOGW6RV.jpg?width=690&quality=85&format=jpg&auto=webp"
     },
     {
       "title": "在Housemarque改进的Saros叙事过程中",
@@ -47,81 +95,45 @@
       ],
       "isFeatured": false,
       "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt8ec802f8193edfd6/69eb4af7a8e44f0968a24043/Implicit_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "Build A Rocket Boy面临法律诉讼， Behaviour Interactive裁员， Xbox有一个新的“北极星” -补丁说明# 49",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/build-a-rocket-boy-facing-legal-action-behaviour-interactive-cuts-jobs-and-xbox-has-a-new-north-star-patch-notes-49",
-      "excerpt": "另外：客户起诉任天堂要求退还关税，《超级马里奥银河电影》获得7.47亿美元$。",
-      "publishedAt": "2026-04-24T10:18:11.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt5f033d0ea98e79f2/69eb3eecacc209cf17b19604/Patch_Notes_49_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "被解雇的Unknown Worlds高管撤回了Krafton违反法院命令的指控，宣布了Subnautica 2的发布日期",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/fired-unknown-worlds-execs-withdraw-claim-that-krafton-violated-court-order-by-announcing-subnautica-2-release-date",
-      "excerpt": "高管的律师要求法官将该动议搁置在新的文件中。",
-      "publishedAt": "2026-04-23T21:29:07.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt8ec3f3ef39a5d2a7/69ea8e81352c971ea9a34de6/ss_824940ca39301e3b3675faa7d1b0f144a23f253c.1920x1080.jpg?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "加拿大联邦政府关注Roblox的儿童安全",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/report-canada-federal-government-concerned-about-children-s-safety-in-roblox",
-      "excerpt": "加拿大担心恋童癖者、白人民族主义者和暴力极端分子使用Robox来瞄准和招募儿童。",
-      "publishedAt": "2026-04-23T17:29:25.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltfb2605a681fba5af/69ea3c2c149efc774d672450/roblox_dashboard.jpg?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "超级马里奥银河电影在全球票房收入为7.47亿美元$",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/the-super-mario-galaxy-movie-earns-747m-at-box-office",
-      "excerpt": "这部电影的特许经营权现在已经超过了20亿美元（ $ 2 billion ）的数字，只有两部电影。",
-      "publishedAt": "2026-04-23T14:47:08.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blte478276ae34609c8/69ea260cacc2097b36b19367/New_Project_(9).png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "新推出的Ivors作曲家奖将表彰视频游戏作曲家",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/audio/newly-launched-ivors-composers-awards-will-honor-video-game-composers",
-      "excerpt": "颁奖典礼将于11月举行，专门表彰作曲家及其手艺。",
-      "publishedAt": "2026-04-23T11:33:17.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt49200d5370c1b820/69ea03e1fd1505358d836842/Ivors_Composer_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "“修复这种关系将非常困难：” Subnautica 2法律纠纷远未结束",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/the-subnautica-2-early-access-dispute-is-far-from-over",
-      "excerpt": "到目前为止的故事-接下来会发生什么？",
-      "publishedAt": "2026-04-23T10:05:31.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltf74ef7a030960b6f/69e9eaf59f9529153b893bb0/Sub_2_EA_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
     }
   ],
   "ai": [
+    {
+      "title": "Railway获得1亿美元$ ，通过AI原生云基础设施挑战AWS",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "excerpt": "总部位于旧金山的云平台Railway周四宣布，它在B轮融资中筹集了1亿美元，因为人工智能应用程序的需求激增暴露了LEGA的局限性",
+      "publishedAt": "2026-01-22T14:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": true,
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/5RLyQIpBeVXxv0RpcXZxWQ/fd9680c6d82acd8208ac341fc575f5fb/nuneybits_Vector_art_of_a_sleek_bullet_train_bursting_from_a_cl_32a805aa-272c-4b34-ac16-cf20508b7ff4.webp?w=300&q=30"
+    },
+    {
+      "title": "想要统治世界的斯坦福大学新生……可能会阅读这本书，并更加努力",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/the-stanford-freshmen-who-want-to-rule-the-world-will-probably-read-this-book-and-try-even-harder/",
+      "excerpt": "这样的书真的能改变什么吗？还是像往常一样，聚光灯会把更多的学生送到那个地方？",
+      "publishedAt": "2026-04-26T22:00:46.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
+    {
+      "title": "亚马逊的新播客策略：将所有内容货币化",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/amazons-new-podcast-strategy-monetize-everything/",
+      "excerpt": "亚马逊的播客业务似乎在过去六个月里发生了变化。",
+      "publishedAt": "2026-04-26T21:38:08.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
     {
       "title": "DeepSeek新型号重要的三个原因",
       "source": "MIT Tech Review",
@@ -132,6 +144,42 @@
         "AI"
       ],
       "isFeatured": true,
+      "image": null
+    },
+    {
+      "title": "Listen Labs在病毒式广告牌招聘噱头后筹集了6900万$ ，以扩大人工智能客户访谈规模",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "excerpt": "阿尔弗雷德·瓦尔福斯（ Alfred Wahlforss ）别无选择。他的创业公司Listen Labs需要雇佣100多名工程师，但与马克·扎克伯格的1亿美元报价竞争似乎是不可能的。因此，他花了5000美元（占其营销预算的五分之一）在旧金山的广告牌上展示",
+      "publishedAt": "2026-01-16T14:01:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/4gD12ThOmNHZuosqC4xCTz/277b1e8968da602108a29fae2eaca440/nuneybits_Vector_art_of_billboard_with_cryptic_code_dbe5b0ff-7644-45e6-a1ca-4a5dceeff986.webp?w=300&q=30"
+    },
+    {
+      "title": "Claude Code每月的费用高达$ 200。Goose免费做同样的事情。",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "excerpt": "人工智能编码革命带来了一个问题：成本高昂。Claude Code是Anthropic基于终端的人工智能代理，可以自主编写、调试和部署代码，吸引了全球软件开发人员的想象力。但它的定价从$ 20到$ 200不等",
+      "publishedAt": "2026-01-19T14:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30"
+    },
+    {
+      "title": "蒂姆·库克（ Tim Cook ）",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/what-tim-cook-built/",
+      "excerpt": "在最新一期的《Equity》中，我们讨论了自库克于2011年担任首席执行官以来苹果的变化，以及即将上任的首席执行官约翰·特纳斯（ John Ternus ）将面临的挑战。",
+      "publishedAt": "2026-04-26T20:22:51.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
       "image": null
     },
     {
@@ -147,22 +195,10 @@
       "image": "https://wp.technologyreview.com/wp-content/uploads/2024/02/europa.jpg?w=3000"
     },
     {
-      "title": "医疗保健人工智能就在这里。我们不知道它是否真的对患者有帮助。",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
-      "excerpt": "我不需要告诉你，人工智能无处不在。或者它越来越多地被用于医院。医生正在使用人工智能来帮助他们记笔记。基于人工智能的工具正在浏览患者记录，标记可能需要某些支持或治疗的人。它们也被用来解释",
-      "publishedAt": "2026-04-24T09:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
       "title": "下载：介绍自然问题",
       "source": "MIT Tech Review",
       "url": "https://www.technologyreview.com/2026/04/23/1136346/the-download-introducing-nature-issue/",
-      "excerpt": "这是今天的The Download版本，我们的工作日时事通讯，提供有关技术世界每日发生的事情的信息。介绍：自然问题当我们谈论“自然”时，我们通常指的是人类未触及的东西。但今天这个世界几乎不存在。 ",
+      "excerpt": "这是今天的The Download版本，我们的工作日时事通讯，提供有关技术世界每日发生的事情的信息。简介：自然问题当我们谈论“自然”时，我们通常指的是人类未触及的东西。但这个世界今天几乎不存在。 ",
       "publishedAt": "2026-04-23T12:10:00.000Z",
       "tags": [
         "AI"
@@ -171,76 +207,16 @@
       "image": "https://wp.technologyreview.com/wp-content/uploads/2024/05/AP24106836358581-social.jpg?w=3000"
     },
     {
-      "title": "聚变能量会变得便宜吗？不要指望它。",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/23/1136329/fusion-power-cost/",
-      "excerpt": "如果公司能够建造和运行核电站，聚变发电可以在未来提供稳定、零排放的电力来源。但一项新的研究表明，即使未来到来，它也可能不便宜。随着时间的推移，技术往往会变得更便宜。锂离子电池现在",
-      "publishedAt": "2026-04-23T10:00:00.000Z",
+      "title": "随着其增长的成熟， Truecaller面临着越来越大的压力",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/truecaller-faces-mounting-pressures-as-its-growth-matures/",
+      "excerpt": "随着增长放缓， Truecaller依靠订阅、商业服务和新功能来维持印度以外的发展势头。",
+      "publishedAt": "2026-04-27T03:00:00.000Z",
       "tags": [
         "AI"
       ],
-      "isFeatured": false,
+      "isFeatured": true,
       "image": null
-    },
-    {
-      "title": "下载：介绍现在人工智能中重要的10件事",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/22/1136310/the-download-10-things-that-matter-in-ai-right-now/",
-      "excerpt": "这是今天的The Download版本，我们的工作日时事通讯，提供有关技术世界每日发生的事情的信息。介绍：现在人工智能中重要的10件事现在人工智能中真正重要的是什么？在不断的发布中，越来越难以分辨，炒作",
-      "publishedAt": "2026-04-22T12:10:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/04/09_20_JFM_MIT_TheDownload.webp?w=2127"
-    },
-    {
-      "title": "人工智能需要强大的数据结构来提供业务价值",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/22/1135295/ai-needs-a-strong-data-fabric-to-deliver-business-value/",
-      "excerpt": "人工智能正在企业中迅速发展，从实验到日常使用。组织正在财务、供应链、人力资源和客户运营中部署副驾驶、代理和预测系统。到2025年底，一半的公司至少在",
-      "publishedAt": "2026-04-22T10:05:06.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/04/SAP-article-iStock-480794780.jpg"
-    },
-    {
-      "title": "Michelle Kim现在正在做的3件事",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/22/1135423/3-things-michelle-kim/",
-      "excerpt": "Isegye偶像如果您认为K-pop很奇怪，虚拟偶像-通过动作捕捉扮演动漫风格数字角色的人-会让您大吃一惊。我最喜欢的是一个名为Isegye Idol的女子团体，由韩国VTuber （同样扮演数字角色的主播） Woowakgood创建。Isegy",
-      "publishedAt": "2026-04-22T10:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "一个城镇摆脱鹅的计划",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/22/1135430/california-town-scheme-get-rid-geese/",
-      "excerpt": "“靠边停！”我在2月一个阳光明媚的下午命令哥哥。我们的目标就在眼前：一群加拿大鹅在狗公园附近的草地上啄食。当我走近时，我注意到一只鸟在它细长的黑色脖子上戴着白色的袖口。这是GPS跟踪器部件",
-      "publishedAt": "2026-04-22T10:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/04/MJ26-front-dl_dispatch.png?w=636"
-    },
-    {
-      "title": "再也没有大自然了",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/22/1135440/editors-letter-may-2026/",
-      "excerpt": "当人们谈论“自然”时，他们通常是在谈论非人类制造的东西。岩石、珊瑚礁、红狼但是，虽然有很多神的创造可以绕过，但很难想到地球上有任何事情没有受到人类手的影响。在巴西的热带雨林中，科学家",
-      "publishedAt": "2026-04-22T10:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://wp.technologyreview.com/wp-content/uploads/2025/06/mat_debrief.png?w=1012"
     }
   ],
   "golf": [
@@ -249,7 +225,7 @@
       "source": "高尔夫技巧",
       "url": "https://www.golf.com",
       "excerpt": "掌握60-80码的距离控制是降低杆数的关键。多练习劈起杆，保持同样的挥杆节奏。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -262,7 +238,7 @@
       "source": "推杆教学",
       "url": "https://www.golfdigest.com",
       "excerpt": "从球后方观察果岭坡度，侧身检查整体走向，最后蹲下确认细节。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -275,7 +251,7 @@
       "source": "挥杆教学",
       "url": "https://www.pgatour.com",
       "excerpt": "下杆时让髋部先启动，带动肩膀和手臂，形成高效的挥杆顺序。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -288,7 +264,7 @@
       "source": "球具指南",
       "url": "https://www.golfchannel.com",
       "excerpt": "杆身硬度、杆头角度和握把大小都会影响击球效果，建议做专业fitting。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -301,7 +277,7 @@
       "source": "心理训练",
       "url": "https://www.golfweek.com",
       "excerpt": "深呼吸、专注于当前击球、建立赛前routine都是有效的心理调节方法。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -314,7 +290,7 @@
       "source": "战术教学",
       "url": "https://www.golf.com",
       "excerpt": "长草区击球需要更保守，选择大角度杆，专注于把球救回球道。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -327,7 +303,7 @@
       "source": "沙坑教学",
       "url": "https://www.golfdigest.com",
       "excerpt": "开放站位，选择56度沙坑杆，击球时沙子带走球，让球轻柔落上果岭。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -340,7 +316,7 @@
       "source": "节奏训练",
       "url": "https://www.pgatour.com",
       "excerpt": "用1-2-1的节奏计数：上杆1秒、顶点停1秒、下杆1秒。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -353,7 +329,7 @@
       "source": "策略分析",
       "url": "https://www.golfchannel.com",
       "excerpt": "观察果岭整体坡度，识别主要断裂线，判断推杆时的拐弯幅度。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -366,7 +342,7 @@
       "source": "体能训练",
       "url": "https://www.golfweek.com",
       "excerpt": "从肩膀旋转热身开始，再到髋部转动，最后练习空挥杆激活肌肉。",
-      "publishedAt": "2026-04-27T07:53:30.273Z",
+      "publishedAt": "2026-04-27T07:57:38.130Z",
       "tags": [
         "高尔夫",
         "技巧"
