@@ -1,15 +1,88 @@
 #!/usr/bin/env node
 /**
  * 内容采集脚本
- * 自动从 RSS 源采集内容
+ * 自动从 RSS 源采集内容并翻译成中文
  */
 
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const http = require('http');
 const { DOMParser } = require('xmldom');
 
-// RSS 订阅列表 - 优化版
+// ============ 翻译功能 ============
+
+// 使用 MyMemory 免费 API（每天 5000 字符免费）
+function translateToChinese(text) {
+  return new Promise((resolve) => {
+    if (!text || text.length < 3) {
+      resolve(text);
+      return;
+    }
+    
+    // 检测是否包含中文字符，已有中文则跳过
+    if (/[\u4e00-\u9fa5]/.test(text)) {
+      resolve(text);
+      return;
+    }
+    
+    try {
+      const encoded = encodeURIComponent(text);
+      const url = `https://api.mymemory.translated.net/get?q=${encoded}&langpair=en|zh-CN`;
+      const urlObj = new URL(url);
+      
+      https.get(urlObj, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => {
+          try {
+            const json = JSON.parse(data);
+            if (json.responseStatus === 200 && json.responseData?.translatedText) {
+              resolve(json.responseData.translatedText);
+            } else {
+              resolve(text);
+            }
+          } catch (e) {
+            resolve(text);
+          }
+        });
+      }).on('error', () => {
+        resolve(text);
+      });
+    } catch (e) {
+      resolve(text);
+    }
+  });
+}
+
+// 批量翻译
+async function translateContent(items, category) {
+  if (category === 'golf') return items;
+  
+  console.log(`   翻译 ${items.length} 篇文章...`);
+  
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    
+    if (!/[\u4e00-\u9fa5]/.test(item.title)) {
+      item.title = await translateToChinese(item.title);
+      await new Promise(r => setTimeout(r, 500));
+    }
+    
+    if (item.excerpt && !/[\u4e00-\u9fa5]/.test(item.excerpt)) {
+      item.excerpt = await translateToChinese(item.excerpt);
+      await new Promise(r => setTimeout(r, 500));
+    }
+    
+    if ((i + 1) % 3 === 0) {
+      console.log(`   已翻译 ${i + 1}/${items.length} 篇`);
+    }
+  }
+  
+  return items;
+}
+
+// ============ RSS 采集功能 ============
 const RSS_SOURCES = {
   gaming: [
     { name: 'Game Developer', url: 'https://www.gamedeveloper.com/rss.xml' },
@@ -229,6 +302,19 @@ async function fetchContent() {
     
     console.log('');
   }
+  
+  // ============ 翻译外文内容 ============
+  console.log('🌐 翻译内容为中文...\n');
+  
+  if (content.gaming.length > 0) {
+    content.gaming = await translateContent(content.gaming, 'gaming');
+  }
+  
+  if (content.ai.length > 0) {
+    content.ai = await translateContent(content.ai, 'ai');
+  }
+  
+  console.log('\n✅ 翻译完成');
   
   return content;
 }
