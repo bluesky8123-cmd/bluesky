@@ -1,0 +1,157 @@
+{
+  "name": "Daily Digest Content Collection",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$json.feedUrl}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "name": "RSS Fetch - Gaming",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://www.gamedeveloper.com/rss.xml",
+        "options": {}
+      },
+      "name": "Gaming RSS 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://kotaku.com/rss",
+        "options": {}
+      },
+      "name": "Gaming RSS 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://huggingface.co/blog/feed.xml",
+        "options": {}
+      },
+      "name": "AI RSS 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "url": "https://www.technologyreview.com/feed/",
+        "options": {}
+      },
+      "name": "AI RSS 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 500]
+    },
+    {
+      "parameters": {
+        "url": "https://www.pgatour.com/news/rss.xml",
+        "options": {}
+      },
+      "name": "Golf RSS 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 600]
+    },
+    {
+      "parameters": {
+        "url": "https://www.golfdigest.com/rss/index",
+        "options": {}
+      },
+      "name": "Golf RSS 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 700]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "database": "notion",
+        "table": "Content",
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "title": "={{$json.title}}",
+            "url": "={{$json.link}}",
+            "source": "={{$json.source}}",
+            "category": "={{$json.category}}",
+            "publishedAt": "={{$json.pubDate}}",
+            "excerpt": "={{$json.description}}"
+          }
+        }
+      },
+      "name": "Save to Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 1,
+      "position": [750, 400]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gaming RSS 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Gaming RSS 2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI RSS 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI RSS 2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Golf RSS 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Golf RSS 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

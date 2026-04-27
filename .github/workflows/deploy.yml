@@ -1,0 +1,39 @@
+name: Daily Digest CI/CD
+
+on:
+  schedule:
+    # 每天早上 8 点和晚上 8 点自动更新
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Fetch RSS Content
+        run: node scripts/fetch-content.js
+        env:
+          # RSS sources are configured in the script
+
+      - name: Generate HTML page
+        run: node scripts/generate-page.js
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--yes'

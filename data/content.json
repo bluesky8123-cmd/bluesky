@@ -1,0 +1,79 @@
+{
+  "gaming": [
+    {
+      "title": "Clair Obscur: Expedition 33 has topped 8 million sales worldwide",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide",
+      "excerpt": "The title also dominated Xbox Game Pass in 2025",
+      "publishedAt": "2026-04-24T14:14:39.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+    },
+    {
+      "title": "Inside Housemarque's improved narrative process for Saros",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/design/inside-housemarque-s-improved-narrative-process-for-saros",
+      "excerpt": "Pacing, production, and well-prepared performances.",
+      "publishedAt": "2026-04-24T13:11:53.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+    },
+    {
+      "title": "Xbox will reevaluate exclusivity and target daily active players under new leadership",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/business/xbox-will-reevaluate-exclusivity-and-target-daily-active-players-under-new-leadership",
+      "excerpt": "In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.",
+      "publishedAt": "2026-04-24T11:53:52.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80"
+    }
+  ],
+  "ai": [
+    {
+      "title": "DeepSeek-V4: a million-token context that agents can actually use",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/deepseekv4",
+      "excerpt": "点击阅读更多...",
+      "publishedAt": "2026-04-24T00:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+    },
+    {
+      "title": "How to Use Transformers.js in a Chrome Extension",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/transformersjs-chrome-extension",
+      "excerpt": "点击阅读更多...",
+      "publishedAt": "2026-04-23T00:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+    },
+    {
+      "title": "Gemma 4 VLA Demo on Jetson Orin Nano Super",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/nvidia/gemma4",
+      "excerpt": "点击阅读更多...",
+      "publishedAt": "2026-04-22T15:40:50.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+    }
+  ],
+  "golf": []
+}
