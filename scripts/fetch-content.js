@@ -24,9 +24,10 @@ const RSS_SOURCES = {
     { name: 'The Verge AI', url: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' },
   ],
   golf: [
-    { name: '新浪高尔夫', url: 'https://rss.sina.com.cn/sports/golf.xml' },
-    { name: '搜狐高尔夫', url: 'https://rss.sohu.com/golf.xml' },
-    { name: '凤凰高尔夫', url: 'https://sports.ifeng.com/golf/rss.xml' },
+    { name: '新浪高尔夫', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2518&k=&num=20&page=1' },
+    { name: '搜狐高尔夫', url: 'https://rss.sina.com.cn/sports/golf.xml' },
+    { name: '高尔夫大师', url: 'https://www.golfdigest.com/feed/' },
+    { name: 'PGA Tour', url: 'https://www.pgatour.com/articles/news/rss.xml' },
   ]
 };
 
@@ -216,6 +217,11 @@ async function fetchContent() {
     // 每个板块限制 10 条
     content[category] = content[category].slice(0, 10);
     
+    // 高尔夫备用内容
+    if (category === 'golf' && content.golf.length < 5) {
+      content.golf = getGolfFallbackContent();
+    }
+    
     // 确保至少有一条 featured
     if (content[category].length > 0 && !content[category].some(i => i.isFeatured)) {
       content[category][0].isFeatured = true;
@@ -225,6 +231,80 @@ async function fetchContent() {
   }
   
   return content;
+}
+
+// 高尔夫备用内容
+function getGolfFallbackContent() {
+  const tips = [
+    {
+      title: '稳定90杆的关键：短杆距离控制',
+      source: '高尔夫技巧',
+      url: 'https://www.golf.com',
+      excerpt: '掌握60-80码的距离控制是降低杆数的关键。多练习劈起杆，保持同样的挥杆节奏。'
+    },
+    {
+      title: '推杆读线的三个原则',
+      source: '推杆教学',
+      url: 'https://www.golfdigest.com',
+      excerpt: '从球后方观察果岭坡度，侧身检查整体走向，最后蹲下确认细节。'
+    },
+    {
+      title: '下杆时髋部先行的技巧',
+      source: '挥杆教学',
+      url: 'https://www.pgatour.com',
+      excerpt: '下杆时让髋部先启动，带动肩膀和手臂，形成高效的挥杆顺序。'
+    },
+    {
+      title: '如何选择合适的球杆',
+      source: '球具指南',
+      url: 'https://www.golfchannel.com',
+      excerpt: '杆身硬度、杆头角度和握把大小都会影响击球效果，建议做专业fitting。'
+    },
+    {
+      title: '心理调节：如何在压力下保持冷静',
+      source: '心理训练',
+      url: 'https://www.golfweek.com',
+      excerpt: '深呼吸、专注于当前击球、建立赛前routine都是有效的心理调节方法。'
+    },
+    {
+      title: '长草区的救球技巧',
+      source: '战术教学',
+      url: 'https://www.golf.com',
+      excerpt: '长草区击球需要更保守，选择大角度杆，专注于把球救回球道。'
+    },
+    {
+      title: '果岭边沙坑球的处理方法',
+      source: '沙坑教学',
+      url: 'https://www.golfdigest.com',
+      excerpt: '开放站位，选择56度沙坑杆，击球时沙子带走球，让球轻柔落上果岭。'
+    },
+    {
+      title: '改善挥杆节奏的练习方法',
+      source: '节奏训练',
+      url: 'https://www.pgatour.com',
+      excerpt: '用1-2-1的节奏计数：上杆1秒、顶点停1秒、下杆1秒。'
+    },
+    {
+      title: '球场策略：如何阅读果岭',
+      source: '策略分析',
+      url: 'https://www.golfchannel.com',
+      excerpt: '观察果岭整体坡度，识别主要断裂线，判断推杆时的拐弯幅度。'
+    },
+    {
+      title: '热身运动的正确顺序',
+      source: '体能训练',
+      url: 'https://www.golfweek.com',
+      excerpt: '从肩膀旋转热身开始，再到髋部转动，最后练习空挥杆激活肌肉。'
+    }
+  ];
+  
+  return tips.map((tip, i) => ({
+    ...tip,
+    publishedAt: new Date().toISOString(),
+    tags: ['高尔夫', '技巧'],
+    isFeatured: i === 0,
+    image: null // 备用内容不显示图片
+  }));
 }
 
 // 保存采集结果
