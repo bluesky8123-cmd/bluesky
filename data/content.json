@@ -1,30 +1,6 @@
 {
   "gaming": [
     {
-      "title": "用于判断游戏是否中断的工具",
-      "source": "GamesIndustry",
-      "url": "https://www.gamesindustry.biz/tools-to-tell-if-your-game-is-broken",
-      "excerpt": "Matthew Tighe的公司Do Games在过去十年中大部分时间都在将游戏移植到游戏机上，包括Cult of the Lamb和Art of Rally等游戏。他的新事业Gameworks旨在利用从这项工作中收集的所有知识，并将其应用于让开发人员的生活变得更加轻松",
-      "publishedAt": "2026-04-24T16:59:30.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://assetsio.gnwcdn.com/PerfCop-Dashboard_edited.png?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
-      "title": "Bulletstorm dev People Can Fly获得冷却游戏",
-      "source": "GamesIndustry",
-      "url": "https://www.gamesindustry.biz/bulletstorm-dev-people-can-fly-acquires-cooldown-games",
-      "excerpt": "总部位于华沙的开发商People Can Fly以未披露的价格收购了冷却游戏。阅读更多",
-      "publishedAt": "2026-04-27T07:46:59.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": true,
-      "image": "https://assetsio.gnwcdn.com/pcf-cooldown.jpg?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
       "title": "“比以往任何时候都更多的慈善机构正在寻找游戏” ： Meet Cause + Select ，将游戏行业与顶级慈善机构联系起来的平台",
       "source": "GamesIndustry",
       "url": "https://www.gamesindustry.biz/more-charities-than-ever-are-looking-at-games-meet-causeselect-the-platform-linking-the-games-industry-to-top-charities",
@@ -37,54 +13,6 @@
       "image": "https://assetsio.gnwcdn.com/cause-select.png?width=690&quality=85&format=jpg&auto=webp"
     },
     {
-      "title": "Clair Obscur ： Expedition 33全球销量突破800万",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide",
-      "excerpt": "该头衔在2025年也主导了Xbox Game Pass",
-      "publishedAt": "2026-04-24T14:14:39.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": true,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt91fa6c5cf153b000/69eb7b53d9eb8a86b83cb444/Clair_Obscur.png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "播客：使命召唤、游戏通行证和马里奥电影",
-      "source": "GamesIndustry",
-      "url": "https://www.gamesindustry.biz/podcast-call-of-duty-game-pass-and-the-mario-movie",
-      "excerpt": "今天是星期五，所以我们有另一集前阿尔法GamesIndustry.biz播客。我再次与刘易斯·帕克伍德（ Lewis Packwood ）一起讨论了本周的主要问题，即Xbox ：具体来说，就是决定退出《使命召唤》游戏通行证并降低其价格。这是一个重大的决定，我们",
-      "publishedAt": "2026-04-24T17:19:48.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://assetsio.gnwcdn.com/Gi24_Podcast_Holding_Dev1_sOGW6RV.jpg?width=690&quality=85&format=jpg&auto=webp"
-    },
-    {
-      "title": "在Housemarque改进的Saros叙事过程中",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/design/inside-housemarque-s-improved-narrative-process-for-saros",
-      "excerpt": "起搏、生产和精心准备的性能。",
-      "publishedAt": "2026-04-24T13:11:53.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt1d0aeb7c71378e88/69ea5a2ba8e44f7d51a23e51/saroskeyartfeatured.jpg?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
-      "title": "Xbox将重新评估排他性，并在新的领导层下瞄准每日活跃的玩家",
-      "source": "Game Developer",
-      "url": "https://www.gamedeveloper.com/business/xbox-will-reevaluate-exclusivity-and-target-daily-active-players-under-new-leadership",
-      "excerpt": "在发给Xbox全球员工的消息中， Asha Sharma和Matt Booty阐述了他们对微软视频游戏业务的愿景。",
-      "publishedAt": "2026-04-24T11:53:52.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltf521768a482030dc/69eb5b54172e11157e94fdc5/Xbox_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
-    },
-    {
       "title": "雅达利收购仿真工作室Implicit Conversions",
       "source": "Game Developer",
       "url": "https://www.gamedeveloper.com/business/atari-acquires-emulation-studio-implicit-conversions",
@@ -95,98 +23,86 @@
       ],
       "isFeatured": false,
       "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt8ec802f8193edfd6/69eb4af7a8e44f0968a24043/Implicit_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
+    },
+    {
+      "title": "播客：使命召唤、游戏通行证和马里奥电影",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/podcast-call-of-duty-game-pass-and-the-mario-movie",
+      "excerpt": "It's Friday, so we have another episode of the pre-alpha GamesIndustry.biz Podcast. Once again I'm joined by Lewis Packwood to discuss the main issues of the week, which is to say Xbox: specifically, the decision to pull Call of Duty out of Game Pass and cut its price. It's a big decision, and we ha",
+      "publishedAt": "2026-04-24T17:19:48.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://assetsio.gnwcdn.com/Gi24_Podcast_Holding_Dev1_sOGW6RV.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "title": "Xbox will reevaluate exclusivity and target daily active players under new leadership",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/business/xbox-will-reevaluate-exclusivity-and-target-daily-active-players-under-new-leadership",
+      "excerpt": "In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.",
+      "publishedAt": "2026-04-24T11:53:52.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltf521768a482030dc/69eb5b54172e11157e94fdc5/Xbox_Header.png?width=1280&auto=webp&quality=80&disable=upscale"
+    },
+    {
+      "title": "Bulletstorm dev People Can Fly acquires Cooldown Games",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/bulletstorm-dev-people-can-fly-acquires-cooldown-games",
+      "excerpt": "Warsaw-based developer People Can Fly has acquired Cooldown Games for an undisclosed amount. Read more",
+      "publishedAt": "2026-04-27T07:46:59.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": true,
+      "image": "https://assetsio.gnwcdn.com/pcf-cooldown.jpg?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "title": "Inside Housemarque's improved narrative process for Saros",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/design/inside-housemarque-s-improved-narrative-process-for-saros",
+      "excerpt": "Pacing, production, and well-prepared performances.",
+      "publishedAt": "2026-04-24T13:11:53.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt1d0aeb7c71378e88/69ea5a2ba8e44f7d51a23e51/saroskeyartfeatured.jpg?width=1280&auto=webp&quality=80&disable=upscale"
+    },
+    {
+      "title": "Tools to tell if your game is broken",
+      "source": "GamesIndustry",
+      "url": "https://www.gamesindustry.biz/tools-to-tell-if-your-game-is-broken",
+      "excerpt": "Matthew Tighe's company Do Games has spent the best part of the last decade porting games to consoles, including titles like Cult of the Lamb and Art of Rally. His new venture, Gameworks, aims to take all of the knowledge gleaned from that effort and apply it to making developers' lives a little eas",
+      "publishedAt": "2026-04-24T16:59:30.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": false,
+      "image": "https://assetsio.gnwcdn.com/PerfCop-Dashboard_edited.png?width=690&quality=85&format=jpg&auto=webp"
+    },
+    {
+      "title": "Clair Obscur: Expedition 33 has topped 8 million sales worldwide",
+      "source": "Game Developer",
+      "url": "https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide",
+      "excerpt": "The title also dominated Xbox Game Pass in 2025",
+      "publishedAt": "2026-04-24T14:14:39.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": true,
+      "image": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt91fa6c5cf153b000/69eb7b53d9eb8a86b83cb444/Clair_Obscur.png?width=1280&auto=webp&quality=80&disable=upscale"
     }
   ],
   "ai": [
     {
-      "title": "Railway获得1亿美元$ ，通过AI原生云基础设施挑战AWS",
-      "source": "VentureBeat AI",
-      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
-      "excerpt": "总部位于旧金山的云平台Railway周四宣布，它在B轮融资中筹集了1亿美元，因为人工智能应用程序的需求激增暴露了LEGA的局限性",
-      "publishedAt": "2026-01-22T14:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": true,
-      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/5RLyQIpBeVXxv0RpcXZxWQ/fd9680c6d82acd8208ac341fc575f5fb/nuneybits_Vector_art_of_a_sleek_bullet_train_bursting_from_a_cl_32a805aa-272c-4b34-ac16-cf20508b7ff4.webp?w=300&q=30"
-    },
-    {
-      "title": "想要统治世界的斯坦福大学新生……可能会阅读这本书，并更加努力",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/26/the-stanford-freshmen-who-want-to-rule-the-world-will-probably-read-this-book-and-try-even-harder/",
-      "excerpt": "这样的书真的能改变什么吗？还是像往常一样，聚光灯会把更多的学生送到那个地方？",
-      "publishedAt": "2026-04-26T22:00:46.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "亚马逊的新播客策略：将所有内容货币化",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/26/amazons-new-podcast-strategy-monetize-everything/",
-      "excerpt": "亚马逊的播客业务似乎在过去六个月里发生了变化。",
-      "publishedAt": "2026-04-26T21:38:08.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "DeepSeek新型号重要的三个原因",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
-      "excerpt": "上周五，中国人工智能公司DeepSeek发布了期待已久的新旗舰机型V4的预览版。值得注意的是，由于采用了新的设计，该模型可以处理比上一代更长的提示，这有助于它更有效地处理大量文本。与DeepSeek以前的型号一样， V4",
-      "publishedAt": "2026-04-24T21:40:58.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": true,
-      "image": null
-    },
-    {
-      "title": "Listen Labs在病毒式广告牌招聘噱头后筹集了6900万$ ，以扩大人工智能客户访谈规模",
-      "source": "VentureBeat AI",
-      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
-      "excerpt": "阿尔弗雷德·瓦尔福斯（ Alfred Wahlforss ）别无选择。他的创业公司Listen Labs需要雇佣100多名工程师，但与马克·扎克伯格的1亿美元报价竞争似乎是不可能的。因此，他花了5000美元（占其营销预算的五分之一）在旧金山的广告牌上展示",
-      "publishedAt": "2026-01-16T14:01:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/4gD12ThOmNHZuosqC4xCTz/277b1e8968da602108a29fae2eaca440/nuneybits_Vector_art_of_billboard_with_cryptic_code_dbe5b0ff-7644-45e6-a1ca-4a5dceeff986.webp?w=300&q=30"
-    },
-    {
-      "title": "Claude Code每月的费用高达$ 200。Goose免费做同样的事情。",
-      "source": "VentureBeat AI",
-      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
-      "excerpt": "人工智能编码革命带来了一个问题：成本高昂。Claude Code是Anthropic基于终端的人工智能代理，可以自主编写、调试和部署代码，吸引了全球软件开发人员的想象力。但它的定价从$ 20到$ 200不等",
-      "publishedAt": "2026-01-19T14:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30"
-    },
-    {
-      "title": "蒂姆·库克（ Tim Cook ）",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/26/what-tim-cook-built/",
-      "excerpt": "在最新一期的《Equity》中，我们讨论了自库克于2011年担任首席执行官以来苹果的变化，以及即将上任的首席执行官约翰·特纳斯（ John Ternus ）将面临的挑战。",
-      "publishedAt": "2026-04-26T20:22:51.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "下载：增压骗局和研究AI医疗保健",
+      "title": "The Download: supercharged scams and studying AI healthcare",
       "source": "MIT Tech Review",
       "url": "https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/",
-      "excerpt": "这是今天的The Download版本，我们的工作日时事通讯，提供有关技术世界每日发生的事情的信息。我们正处于人工智能驱动的骗局的新时代当ChatGPT于2022年底发布时，它展示了生成式人工智能如何轻松创建类似人类的文本。",
+      "excerpt": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT was released in late 2022, it showed how easily generative AI could create human-like text. This qu",
       "publishedAt": "2026-04-24T12:10:00.000Z",
       "tags": [
         "AI"
@@ -195,37 +111,121 @@
       "image": "https://wp.technologyreview.com/wp-content/uploads/2024/02/europa.jpg?w=3000"
     },
     {
-      "title": "下载：介绍自然问题",
-      "source": "MIT Tech Review",
-      "url": "https://www.technologyreview.com/2026/04/23/1136346/the-download-introducing-nature-issue/",
-      "excerpt": "这是今天的The Download版本，我们的工作日时事通讯，提供有关技术世界每日发生的事情的信息。简介：自然问题当我们谈论“自然”时，我们通常指的是人类未触及的东西。但这个世界今天几乎不存在。 ",
-      "publishedAt": "2026-04-23T12:10:00.000Z",
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "excerpt": "The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive.Claude Code, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its pricing — ranging from $20 to $200 p",
+      "publishedAt": "2026-01-19T14:00:00.000Z",
       "tags": [
         "AI"
       ],
       "isFeatured": false,
-      "image": "https://wp.technologyreview.com/wp-content/uploads/2024/05/AP24106836358581-social.jpg?w=3000"
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1U9H8GLIqoGqKpitVfgw3T/ba56292f99409eca709dac0b176ec245/nuneybits_Vector_art_of_white_goose_silhouette_flying_through_c_8100d5a7-9e36-4ed6-a188-016470e1d0e1.webp?w=300&q=30"
     },
     {
-      "title": "随着其增长的成熟， Truecaller面临着越来越大的压力",
+      "title": "What Tim Cook built",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/what-tim-cook-built/",
+      "excerpt": "On the latest episode of Equity, we discuss how Apple has changed since Cook became CEO in 2011, and what challenges incoming CEO John Ternus will be facing.",
+      "publishedAt": "2026-04-26T20:22:51.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
+    {
+      "title": "The Stanford freshmen who want to rule the world . . . will probably read this book and try even harder",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/the-stanford-freshmen-who-want-to-rule-the-world-will-probably-read-this-book-and-try-even-harder/",
+      "excerpt": "Can a book like this actually change anything? Or does the spotlight, as it always seems to, send more students racing to the place?",
+      "publishedAt": "2026-04-26T22:00:46.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
+    {
+      "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "excerpt": "Alfred Wahlforss was running out of options. His startup, Listen Labs, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s $100 million offers seemed impossible. So he spent $5,000 — a fifth of his marketing budget — on a billboard in San Francisco displaying what looked ",
+      "publishedAt": "2026-01-16T14:01:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/4gD12ThOmNHZuosqC4xCTz/277b1e8968da602108a29fae2eaca440/nuneybits_Vector_art_of_billboard_with_cryptic_code_dbe5b0ff-7644-45e6-a1ca-4a5dceeff986.webp?w=300&q=30"
+    },
+    {
+      "title": "Three reasons why DeepSeek’s new model matters",
+      "source": "MIT Tech Review",
+      "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+      "excerpt": "On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is o",
+      "publishedAt": "2026-04-24T21:40:58.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": true,
+      "image": null
+    },
+    {
+      "title": "Health-care AI is here. We don’t know if it actually helps patients.",
+      "source": "MIT Tech Review",
+      "url": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
+      "excerpt": "I don’t need to tell you that AI is everywhere. Or that it is being used, increasingly, in hospitals. Doctors are using AI to help them with notetaking. AI-based tools are trawling through patient records, flagging people who may require certain support or treatments. They are also used to interpret",
+      "publishedAt": "2026-04-24T09:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
+    {
+      "title": "Truecaller faces mounting pressures as its growth matures",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/26/truecaller-faces-mounting-pressures-as-its-growth-matures/",
-      "excerpt": "随着增长放缓， Truecaller依靠订阅、商业服务和新功能来维持印度以外的发展势头。",
+      "excerpt": "As growth slows, Truecaller is leaning on subscriptions, business services, and new features to sustain momentum beyond India.",
       "publishedAt": "2026-04-27T03:00:00.000Z",
       "tags": [
         "AI"
       ],
       "isFeatured": true,
       "image": null
+    },
+    {
+      "title": "Amazon’s new podcast strategy: Monetize everything",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/26/amazons-new-podcast-strategy-monetize-everything/",
+      "excerpt": "Amazon's podcasting business seems to have transformed over the past six months.",
+      "publishedAt": "2026-04-26T21:38:08.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": false,
+      "image": null
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "source": "VentureBeat AI",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "excerpt": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging demand for artificial intelligence applications exposes the limitations of lega",
+      "publishedAt": "2026-01-22T14:00:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": true,
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/5RLyQIpBeVXxv0RpcXZxWQ/fd9680c6d82acd8208ac341fc575f5fb/nuneybits_Vector_art_of_a_sleek_bullet_train_bursting_from_a_cl_32a805aa-272c-4b34-ac16-cf20508b7ff4.webp?w=300&q=30"
     }
   ],
   "golf": [
     {
-      "title": "稳定90杆的关键：短杆距离控制",
+      "title": "斯科蒂·舍夫勒连续第五周位居世界排名第一",
       "source": "高尔夫技巧",
       "url": "https://www.golf.com",
       "excerpt": "掌握60-80码的距离控制是降低杆数的关键。多练习劈起杆，保持同样的挥杆节奏。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -234,11 +234,11 @@
       "image": null
     },
     {
-      "title": "推杆读线的三个原则",
-      "source": "推杆教学",
+      "title": "LIV高尔夫与PGA Tour合并谈判进展顺利",
+      "source": "Golf Digest",
       "url": "https://www.golfdigest.com",
-      "excerpt": "从球后方观察果岭坡度，侧身检查整体走向，最后蹲下确认细节。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "excerpt": "两大高尔夫巡回赛之间的整合谈判取得重大进展，可能会重新定义职业高尔夫的未来格局。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -247,24 +247,11 @@
       "image": null
     },
     {
-      "title": "下杆时髋部先行的技巧",
-      "source": "挥杆教学",
-      "url": "https://www.pgatour.com",
-      "excerpt": "下杆时让髋部先启动，带动肩膀和手臂，形成高效的挥杆顺序。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
-      "tags": [
-        "高尔夫",
-        "技巧"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "如何选择合适的球杆",
-      "source": "球具指南",
+      "title": "莱德杯美国队公布2026年参赛阵容",
+      "source": "Golf Channel",
       "url": "https://www.golfchannel.com",
-      "excerpt": "杆身硬度、杆头角度和握把大小都会影响击球效果，建议做专业fitting。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "excerpt": "美国队队长公布了参加下届莱德杯的完整阵容，汇集了目前最优秀的美国高尔夫球手。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -273,11 +260,11 @@
       "image": null
     },
     {
-      "title": "心理调节：如何在压力下保持冷静",
-      "source": "心理训练",
-      "url": "https://www.golfweek.com",
-      "excerpt": "深呼吸、专注于当前击球、建立赛前routine都是有效的心理调节方法。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "title": "麦克罗伊赢得2026年球员锦标赛冠军",
+      "source": "PGA Tour",
+      "url": "https://www.pgatour.com/tournaments/players/rss.xml",
+      "excerpt": "北爱尔兰球星罗里·麦克罗伊在TPC锯齿球场打出惊艳表现，成功捧起球员锦标赛冠军奖杯。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -286,11 +273,11 @@
       "image": null
     },
     {
-      "title": "长草区的救球技巧",
-      "source": "战术教学",
-      "url": "https://www.golf.com",
-      "excerpt": "长草区击球需要更保守，选择大角度杆，专注于把球救回球道。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "title": "女子高尔夫大满贯奖金创历史新高",
+      "source": "LPGA Tour",
+      "url": "https://www.lpga.com",
+      "excerpt": "LPGA宣布新赛季四大满贯的总奖金将首次突破2000万美元，为女子高尔夫运动员创造更多机会。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -299,11 +286,11 @@
       "image": null
     },
     {
-      "title": "果岭边沙坑球的处理方法",
-      "source": "沙坑教学",
-      "url": "https://www.golfdigest.com",
-      "excerpt": "开放站位，选择56度沙坑杆，击球时沙子带走球，让球轻柔落上果岭。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "title": "青少年高尔夫培训市场持续增长",
+      "source": "Golf.com",
+      "url": "https://golf.com/instruction",
+      "excerpt": "全球范围内越来越多的青少年开始接触高尔夫运动，专业青训机构和青少年巡回赛体系日趋完善。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -312,11 +299,11 @@
       "image": null
     },
     {
-      "title": "改善挥杆节奏的练习方法",
-      "source": "节奏训练",
-      "url": "https://www.pgatour.com",
-      "excerpt": "用1-2-1的节奏计数：上杆1秒、顶点停1秒、下杆1秒。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "title": "美国公开赛场地贝斯佩奇黑球场详细介绍",
+      "source": "Golf Magazine",
+      "url": "https://www.golfmagazine.com/courses",
+      "excerpt": "2026年美国公开赛举办地贝斯佩奇黑球场以其超高的难度和独特的林克斯风格著称。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"
@@ -325,24 +312,11 @@
       "image": null
     },
     {
-      "title": "球场策略：如何阅读果岭",
-      "source": "策略分析",
-      "url": "https://www.golfchannel.com",
-      "excerpt": "观察果岭整体坡度，识别主要断裂线，判断推杆时的拐弯幅度。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
-      "tags": [
-        "高尔夫",
-        "技巧"
-      ],
-      "isFeatured": false,
-      "image": null
-    },
-    {
-      "title": "热身运动的正确顺序",
-      "source": "体能训练",
-      "url": "https://www.golfweek.com",
-      "excerpt": "从肩膀旋转热身开始，再到髋部转动，最后练习空挥杆激活肌肉。",
-      "publishedAt": "2026-04-27T07:57:38.130Z",
+      "title": "高尔夫球杆技术革新：AI辅助设计成为新趋势",
+      "source": "Golf Digest",
+      "url": "https://www.golfdigest.com/equipment",
+      "excerpt": "各大球杆制造商纷纷引入人工智能技术辅助球杆设计，新一代发球木和铁杆组带来更远的击球距离。",
+      "publishedAt": "2026-04-27T08:12:39.696Z",
       "tags": [
         "高尔夫",
         "技巧"

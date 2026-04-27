@@ -73,9 +73,10 @@ function generateArticleCard(article, category) {
     </div>`;
   }
   
-  // 普通卡片（带右侧小图）
-  return `
-  <article class="article-card ${article.image ? 'with-thumb' : ''}">
+  // 普通卡片（整个卡片可点击，带右侧小图）
+  const cardLink = article.url && article.url !== '#' ? article.url : null;
+  
+  const cardContent = `
     <div class="article-content">
       <div class="article-meta">
         <span class="article-source ${colorClass}">${article.source}</span>
@@ -88,6 +89,20 @@ function generateArticleCard(article, category) {
       </div>
     </div>
     ${imageHtml}
+  `;
+  
+  // 如果有有效链接，整个卡片可点击
+  if (cardLink) {
+    return `
+  <a href="${cardLink}" target="_blank" class="article-card ${article.image ? 'with-thumb' : ''}">
+    ${cardContent}
+  </a>`;
+  }
+  
+  // 无链接时使用 article 标签
+  return `
+  <article class="article-card ${article.image ? 'with-thumb' : ''}">
+    ${cardContent}
   </article>`;
 }
 
