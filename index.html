@@ -204,39 +204,80 @@
     /* 文章网格 */
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
     /* 文章卡片 */
     .article-card {
       background: var(--bg-card);
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                  box-shadow 0.4s ease;
+      transition: transform 0.3s ease, 
+                  box-shadow 0.3s ease;
       border: 1px solid var(--border-light);
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
+      animation: fadeInUp 0.5s ease forwards;
+      display: flex;
+      flex-direction: column;
     }
 
     .article-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
     }
 
+    /* 带缩略图的卡片 */
+    .article-card.with-thumb {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .article-card.with-thumb .article-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .article-card.with-thumb .article-thumb {
+      width: 100px;
+      min-width: 100px;
+      height: 100px;
+      margin: 16px;
+      margin-left: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .article-card.with-thumb .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .article-card.with-thumb:hover .article-thumb img {
+      transform: scale(1.05);
+    }
+
+    /* Featured 卡片 */
     .article-card.featured {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
+      grid-template-columns: 1fr 1.5fr;
       border: none;
       background: transparent;
+      margin-bottom: 10px;
+    }
+
+    .article-card.featured:not(.has-image) {
+      grid-template-columns: 1fr;
     }
 
     .featured-inner {
       background: var(--bg-card);
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
       box-shadow: var(--shadow-soft);
     }
@@ -245,31 +286,50 @@
       .article-card.featured {
         grid-template-columns: 1fr;
       }
+      
+      .article-card.with-thumb {
+        flex-direction: column;
+      }
+      
+      .article-card.with-thumb .article-thumb {
+        width: 100%;
+        height: 120px;
+        margin: 0;
+        margin-bottom: 12px;
+        border-radius: 0;
+      }
     }
 
     .article-image {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.5s ease;
+    }
+
+    .article-card.featured:not(.has-image) .article-image {
+      display: none;
+    }
+
+    .article-card.featured.has-image .article-image {
+      height: 100%;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .article-card.featured.has-image .featured-inner {
+      border-radius: 0 12px 12px 0;
     }
 
     .article-card:hover .article-image {
-      transform: scale(1.05);
-    }
-
-    .article-card.featured .article-image {
-      height: 100%;
-      min-height: 300px;
-      border-radius: 16px 0 0 16px;
+      transform: scale(1.03);
     }
 
     .article-content {
-      padding: 28px;
+      padding: 20px;
     }
 
     .article-card.featured .article-content {
-      padding: 36px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -302,10 +362,10 @@
 
     .article-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 600;
       line-height: 1.4;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       color: var(--text-primary);
       transition: color 0.3s ease;
     }
@@ -315,19 +375,23 @@
     }
 
     .article-card.featured .article-title {
-      font-size: 28px;
+      font-size: 22px;
       line-height: 1.3;
     }
 
     .article-excerpt {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 18px;
+      line-height: 1.7;
+      margin-bottom: 14px;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+    
+    .article-card.featured .article-excerpt {
+      -webkit-line-clamp: 3;
     }
 
     .article-tags {
@@ -477,8 +541,10 @@
 
       <div class="articles-grid">
         
-    <div class="article-card featured">
-      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Clair Obscur: Expedition 33 has topped 8 million sales worldwide" class="article-image">
+    <div class="article-card featured has-image">
+      
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt91fa6c5cf153b000/69eb7b53d9eb8a86b83cb444/Clair_Obscur.png?width=1280&auto=webp&quality=80&disable=upscale" alt="Clair Obscur: Expedition 33 has topped 8 million sales worldwide" class="article-image" onerror="this.style.display='none';this.parentElement.classList.remove('has-image')">
+    
       <div class="featured-inner">
         <div class="article-content">
           <div class="article-meta">
@@ -486,7 +552,7 @@
             <span class="article-time">2 天前</span>
           </div>
           <h3 class="article-title">Clair Obscur: Expedition 33 has topped 8 million sales worldwide</h3>
-          <p class="article-excerpt">The title also dominated Xbox Game Pass in 2025, setting a new record for Day 1 Game Pass subscribers for a third-party title.</p>
+          <p class="article-excerpt">The title also dominated Xbox Game Pass in 2025</p>
           <div class="article-tags">
             <span class="tag">游戏</span>
           </div>
@@ -497,32 +563,168 @@
         </div>
       </div>
     </div>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-gaming">Game Developer</span>
-          <span class="article-time">2 天前</span>
-        </div>
-        <h3 class="article-title">Inside Housemarque's improved narrative process for Saros</h3>
-        <p class="article-excerpt">Pacing, production, and well-prepared performances. How the studio evolved its storytelling approach.</p>
-        <div class="article-tags">
-          <span class="tag">游戏</span>
-        </div>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">2 天前</span>
       </div>
-    </article>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-gaming">Game Developer</span>
-          <span class="article-time">2 天前</span>
-        </div>
-        <h3 class="article-title">Xbox will reevaluate exclusivity and target daily active players under new leadership</h3>
-        <p class="article-excerpt">In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.</p>
-        <div class="article-tags">
-          <span class="tag">游戏</span>
-        </div>
+      <h3 class="article-title">Inside Housemarque's improved narrative process for Saros</h3>
+      <p class="article-excerpt">Pacing, production, and well-prepared performances.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
       </div>
-    </article>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt1d0aeb7c71378e88/69ea5a2ba8e44f7d51a23e51/saroskeyartfeatured.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">2 天前</span>
+      </div>
+      <h3 class="article-title">Xbox will reevaluate exclusivity and target daily active players under new leadership</h3>
+      <p class="article-excerpt">In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltf521768a482030dc/69eb5b54172e11157e94fdc5/Xbox_Header.png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">2 天前</span>
+      </div>
+      <h3 class="article-title">Atari acquires emulation studio Implicit Conversions</h3>
+      <p class="article-excerpt">The deal includes Implicit Conversions' proprietary emulation technology, Syrup.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt8ec802f8193edfd6/69eb4af7a8e44f0968a24043/Implicit_Header.png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">2 天前</span>
+      </div>
+      <h3 class="article-title">Build A Rocket Boy facing legal action, Behaviour Interactive cuts jobs, and Xbox has a new 'north star' - Patch Notes #49</h3>
+      <p class="article-excerpt">Plus: Customers suing Nintendo for tariff refunds and The Super Mario Galaxy Movie earns $747 million.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt5f033d0ea98e79f2/69eb3eecacc209cf17b19604/Patch_Notes_49_Header.png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">Fired Unknown Worlds execs withdraw claim that Krafton violated court order by announcing Subnautica 2 release date</h3>
+      <p class="article-excerpt">Lawyers for the execs asked the judge to toss the motion in new filing.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt8ec3f3ef39a5d2a7/69ea8e81352c971ea9a34de6/ss_824940ca39301e3b3675faa7d1b0f144a23f253c.1920x1080.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">Canada federal government concerned about children's safety in Roblox</h3>
+      <p class="article-excerpt">Canada is worried that pedophiles, white nationalists, and violent extremists using Robox to target and recruit children.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltfb2605a681fba5af/69ea3c2c149efc774d672450/roblox_dashboard.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">The Super Mario Galaxy Movie earns $747M at global box office</h3>
+      <p class="article-excerpt">The movie franchise has now surpassed the $2 billion figure with just two films.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blte478276ae34609c8/69ea260cacc2097b36b19367/New_Project_(9).png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">Newly-launched Ivors Composers Awards will honor video game composers</h3>
+      <p class="article-excerpt">The award show will take place in November and will specifically celebrate composers and their craft.</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt49200d5370c1b820/69ea03e1fd1505358d836842/Ivors_Composer_Header.png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-gaming">Game Developer</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">'It's going to be extremely hard to repair the relationship:' The Subnautica 2 legal dispute is far from over</h3>
+      <p class="article-excerpt">The story so far—and what comes next?</p>
+      <div class="article-tags">
+        <span class="tag">游戏</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltf74ef7a030960b6f/69e9eaf59f9529153b893bb0/Sub_2_EA_Header.png?width=1280&auto=webp&quality=80&disable=upscale" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
       </div>
     </section>
 
@@ -541,16 +743,16 @@
 
       <div class="articles-grid">
         
-    <div class="article-card featured">
-      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="Three reasons why DeepSeek's new model matters" class="article-image">
+    <div class="article-card featured ">
+      
       <div class="featured-inner">
         <div class="article-content">
           <div class="article-meta">
             <span class="article-source source-ai">MIT Tech Review</span>
             <span class="article-time">2 天前</span>
           </div>
-          <h3 class="article-title">Three reasons why DeepSeek's new model matters</h3>
-          <p class="article-excerpt">DeepSeek V4 支持100万Token上下文窗口，刷新了开源模型的性能纪录，标志着中国AI能力的重大突破。</p>
+          <h3 class="article-title">Three reasons why DeepSeek’s new model matters</h3>
+          <p class="article-excerpt">On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is o</p>
           <div class="article-tags">
             <span class="tag">AI</span>
           </div>
@@ -561,98 +763,159 @@
         </div>
       </div>
     </div>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-ai">MIT Tech Review</span>
-          <span class="article-time">2 天前</span>
-        </div>
-        <h3 class="article-title">The Download: supercharged scams and studying AI healthcare</h3>
-        <p class="article-excerpt">AI诈骗进入新时代，我们需要更好的防护措施。同时，AI在医疗领域的应用效果仍需验证。</p>
-        <div class="article-tags">
-          <span class="tag">AI</span>
-        </div>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">2 天前</span>
       </div>
-    </article>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-ai">MIT Tech Review</span>
-          <span class="article-time">2 天前</span>
-        </div>
-        <h3 class="article-title">Health-care AI is here. We don't know if it actually helps patients.</h3>
-        <p class="article-excerpt">AI在医疗领域的应用正在快速增长，但缺乏足够的临床验证数据来证明其实际效果。</p>
-        <div class="article-tags">
-          <span class="tag">AI</span>
-        </div>
-      </div>
-    </article>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="section-badge badge-golf">
-        
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-    
-        高尔夫
-      </div>
-
-      <div class="section-header">
-        <h2 class="section-title">Golf</h2>
-        <span class="section-subtitle">技巧教学 · 巡回赛况</span>
-      </div>
-
-      <div class="articles-grid">
-        
-    <div class="article-card featured">
-      <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80" alt="破90杆的关键：短杆技术的五个致命错误" class="article-image">
-      <div class="featured-inner">
-        <div class="article-content">
-          <div class="article-meta">
-            <span class="article-source source-golf">Golf Digest</span>
-            <span class="article-time">刚刚</span>
-          </div>
-          <h3 class="article-title">破90杆的关键：短杆技术的五个致命错误</h3>
-          <p class="article-excerpt">大多数业余球手在40-80码的短杆距离上失误频频。本文分析五个最常见的错误，以及如何通过简单的调整来改善你的短杆成绩。</p>
-          <div class="article-tags">
-            <span class="tag">高尔夫</span>
-          </div>
-          <a href="https://www.golfdigest.com" target="_blank" class="read-more">
-            阅读原文
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <h3 class="article-title">The Download: supercharged scams and studying AI healthcare</h3>
+      <p class="article-excerpt">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT was released in late 2022, it showed how easily generative AI could create human-like text. This qu</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
       </div>
     </div>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-golf">PGA Tour</span>
-          <span class="article-time">17 小时前</span>
-        </div>
-        <h3 class="article-title">斯科蒂·舍夫勒的果岭阅读秘籍</h3>
-        <p class="article-excerpt">世界第一舍夫勒分享他如何读懂复杂果岭的技巧，包括观察草纹、利用辅助线和计算推击力度的系统方法。</p>
-        <div class="article-tags">
-          <span class="tag">高尔夫</span>
-        </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2024/02/europa.jpg?w=3000" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card ">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">2 天前</span>
       </div>
-    </article>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source source-golf">Golf Magazine</span>
-          <span class="article-time">昨天</span>
-        </div>
-        <h3 class="article-title">如何选择适合你的球杆：AI辅助定制时代来临</h3>
-        <p class="article-excerpt">通过挥杆传感器和AI分析，现在可以精确匹配最适合你的球杆参数。这项技术让球具调试效率提升了40%。</p>
-        <div class="article-tags">
-          <span class="tag">高尔夫</span>
-        </div>
+      <h3 class="article-title">Health-care AI is here. We don’t know if it actually helps patients.</h3>
+      <p class="article-excerpt">I don’t need to tell you that AI is everywhere. Or that it is being used, increasingly, in hospitals. Doctors are using AI to help them with notetaking. AI-based tools are trawling through patient records, flagging people who may require certain support or treatments. They are also used to interpret</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
       </div>
-    </article>
+    </div>
+    
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">The Download: introducing the Nature issue</h3>
+      <p class="article-excerpt">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: the Nature issue When we talk about “nature,” we usually mean something untouched by humans. But little of that world exists today.&#160;</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2024/05/AP24106836358581-social.jpg?w=3000" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card ">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">3 天前</span>
+      </div>
+      <h3 class="article-title">Will fusion power get cheap? Don’t count on it.</h3>
+      <p class="article-excerpt">Fusion power could provide a steady, zero-emissions source of electricity in the future—if companies can get plants built and running. But a new study suggests that even if that future arrives, it might not come cheap. Technologies tend to get less expensive over time. Lithium-ion batteries are now </p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">4 天前</span>
+      </div>
+      <h3 class="article-title">The Download: introducing the 10 Things That Matter in AI Right Now</h3>
+      <p class="article-excerpt">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: 10 Things That Matter in AI Right Now What actually matters in AI right now? It’s getting harder to tell amid the constant launches, hype</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2026/04/09_20_JFM_MIT_TheDownload.webp?w=2127" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">4 天前</span>
+      </div>
+      <h3 class="article-title">AI needs a strong data fabric to deliver business value</h3>
+      <p class="article-excerpt">Artificial intelligence is moving quickly in the enterprise, from experimentation to everyday use. Organizations are deploying copilots, agents, and predictive systems across finance, supply chains, human resources, and customer operations. By the end of 2025, half of companies used AI in at least t</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2026/04/SAP-article-iStock-480794780.jpg" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card ">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">4 天前</span>
+      </div>
+      <h3 class="article-title">3 things Michelle Kim is into right now</h3>
+      <p class="article-excerpt">Isegye Idol If you thought K-pop was weird, virtual idols—humans who perform as anime-style digital characters via motion capture—will blow your mind. My favorite is a girl group called Isegye Idol, created by Woowakgood, a Korean VTuber (a streamer who likewise performs as a digital persona). Isegy</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">4 天前</span>
+      </div>
+      <h3 class="article-title">One town’s scheme to get rid of its geese</h3>
+      <p class="article-excerpt">“Pull over!” I order my brother one sunny February afternoon. Our target is in sight: a gaggle of Canada geese, pecking at grass near the dog park. As I approach, tiptoeing over their grayish-white poop, I notice that one bird wears a white cuff around its slender black neck. It’s a GPS tracker—part</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2026/04/MJ26-front-dl_dispatch.png?w=636" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
+  <article class="article-card with-thumb">
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="article-source source-ai">MIT Tech Review</span>
+        <span class="article-time">4 天前</span>
+      </div>
+      <h3 class="article-title">There is no nature anymore</h3>
+      <p class="article-excerpt">When people talk about “nature,” they’re generally talking about things that aren’t made by human beings. Rocks. Reefs. Red wolves. But while there is plenty of God’s creation to go around, it is hard to think of anything on Earth that human hands haven’t affected. In the Brazilian rainforest, scien</p>
+      <div class="article-tags">
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    
+    <div class="article-thumb">
+      <img src="https://wp.technologyreview.com/wp-content/uploads/2025/06/mat_debrief.png?w=1012" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
+  
+  </article>
       </div>
     </section>
+
   </main>
 
   <!-- 页脚 -->

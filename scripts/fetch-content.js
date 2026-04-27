@@ -14,14 +14,19 @@ const RSS_SOURCES = {
   gaming: [
     { name: 'Game Developer', url: 'https://www.gamedeveloper.com/rss.xml' },
     { name: 'Polygon', url: 'https://www.polygon.com/rss/index.xml' },
+    { name: 'Gamasutra', url: 'https://www.gamedeveloper.com/rss.xml' },
+    { name: 'GamesIndustry', url: 'https://www.gamesindustry.biz/feed' },
   ],
   ai: [
     { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/' },
-    { name: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
+    { name: 'TechCrunch AI', url: 'https://techcrunch.com/feed/' },
+    { name: 'VentureBeat AI', url: 'https://venturebeat.com/category/ai/feed/' },
+    { name: 'The Verge AI', url: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' },
   ],
   golf: [
-    { name: 'Golf Magazine', url: 'https://golf.com/feed/' },
-    { name: 'Golf Course', url: 'https://www.golfcourse.net/feed/' },
+    { name: '新浪高尔夫', url: 'https://rss.sina.com.cn/sports/golf.xml' },
+    { name: '搜狐高尔夫', url: 'https://rss.sohu.com/golf.xml' },
+    { name: '凤凰高尔夫', url: 'https://sports.ifeng.com/golf/rss.xml' },
   ]
 };
 
@@ -53,6 +58,43 @@ function getRandomImage(category) {
   return images[Math.floor(Math.random() * images.length)];
 }
 
+// 从 RSS 项中提取图片 URL
+function extractImage(item) {
+  // 尝试多种方式提取图片
+  const enclosures = item.getElementsByTagName('enclosure');
+  if (enclosures.length > 0) {
+    const type = enclosures[0].getAttribute('type') || '';
+    if (type.startsWith('image') || type.includes('jpg') || type.includes('png')) {
+      return enclosures[0].getAttribute('url');
+    }
+  }
+  
+  // 尝试 media:content
+  const mediaContent = item.getElementsByTagName('media:content');
+  if (mediaContent.length > 0) {
+    return mediaContent[0].getAttribute('url');
+  }
+  
+  // 尝试 media:thumbnail
+  const mediaThumbnail = item.getElementsByTagName('media:thumbnail');
+  if (mediaThumbnail.length > 0) {
+    return mediaThumbnail[0].getAttribute('url');
+  }
+  
+  // 从 description 或 content 中提取第一张图片
+  const description = item.getElementsByTagName('description');
+  const content = item.getElementsByTagName('content:encoded');
+  const text = (description.length > 0 ? description[0].textContent : '') + 
+               (content.length > 0 ? content[0].textContent : '');
+  
+  const imgMatch = text.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (imgMatch) {
+    return imgMatch[1];
+  }
+  
+  return null; // 无图片
+}
+
 // 清理 HTML 标签和特殊字符
 function cleanText(text) {
   if (!text) return '';
@@ -79,7 +121,8 @@ function parseRSS(xml, category) {
     const doc = parser.parseFromString(xml, 'text/xml');
     const entries = doc.getElementsByTagName('item');
     
-    for (let i = 0; i < Math.min(entries.length, 5); i++) {
+    // 每个源取 10 条
+    for (let i = 0; i < Math.min(entries.length, 10); i++) {
       const entry = entries[i];
       
       const getTagText = (tagName) => {
@@ -92,6 +135,9 @@ function parseRSS(xml, category) {
       const description = cleanText(getTagText('description') || getTagText('content:encoded') || getTagText('summary'));
       const pubDate = getTagText('pubDate');
       
+      // 提取图片
+      const imageUrl = extractImage(entry);
+      
       if (!title || title.length < 5) continue;
       
       items.push({
@@ -102,7 +148,7 @@ function parseRSS(xml, category) {
         publishedAt: pubDate ? new Date(pubDate).toISOString() : new Date().toISOString(),
         tags: [category === 'gaming' ? '游戏' : category === 'ai' ? 'AI' : '高尔夫'],
         isFeatured: i === 0,
-        image: getRandomImage(category)
+        image: imageUrl // 使用原文图片，无图则为 null
       });
     }
   } catch (e) {
@@ -167,8 +213,10 @@ async function fetchContent() {
       }
     }
     
-    content[category] = content[category].slice(0, 3);
+    // 每个板块限制 10 条
+    content[category] = content[category].slice(0, 10);
     
+    // 确保至少有一条 featured
     if (content[category].length > 0 && !content[category].some(i => i.isFeatured)) {
       content[category][0].isFeatured = true;
     }
