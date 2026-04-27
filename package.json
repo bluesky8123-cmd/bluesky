@@ -9,10 +9,15 @@
     "build": "node scripts/fetch-content.js && node scripts/generate-page.js",
     "start": "npm run build"
   },
-  "keywords": ["daily-digest", "rss", "automation"],
+  "keywords": [
+    "daily-digest",
+    "rss",
+    "automation"
+  ],
   "author": "bluesky",
   "license": "MIT",
   "dependencies": {
+    "sodium-native": "^5.1.0",
     "xmldom": "^0.6.0"
   }
 }

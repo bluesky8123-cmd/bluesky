@@ -24,8 +24,6 @@ jobs:
 
       - name: Fetch RSS Content
         run: node scripts/fetch-content.js
-        env:
-          # RSS sources are configured in the script
 
       - name: Generate HTML page
         run: node scripts/generate-page.js
