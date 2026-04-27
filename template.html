@@ -6,20 +6,21 @@
   <title>每日文摘 · Daily Digest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #fefbf6;
-      --bg-secondary: #faf7f2;
+      --bg-primary: #faf9f7;
+      --bg-secondary: #f4f2ed;
       --bg-card: #ffffff;
       --text-primary: #1a1a1a;
-      --text-secondary: #666666;
-      --text-muted: #999999;
-      --accent-coral: #d85a30;
-      --accent-teal: #1d9e75;
-      --accent-blue: #378add;
-      --border-light: #e8e0d8;
-      --border-medium: #d4c8b8;
+      --text-secondary: #4a4a4a;
+      --text-muted: #8a8a8a;
+      --accent-coral: #e07850;
+      --accent-teal: #2eb890;
+      --accent-blue: #4a90d9;
+      --border-light: #e8e4de;
+      --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.1);
     }
 
     * {
@@ -32,239 +33,457 @@
       font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-primary);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       min-height: 100vh;
     }
 
+    /* 头部设计 */
     .header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2a26 100%);
       color: #fff;
-      padding: 60px 24px 40px;
+      padding: 80px 24px 60px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .header-date {
       font-family: 'Source Sans 3', sans-serif;
-      font-size: 12px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 16px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .header-date::before,
+    .header-date::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
     }
 
     .header-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(32px, 6vw, 56px);
+      font-size: clamp(36px, 7vw, 64px);
       font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .header-title span {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .header-subtitle {
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(255,255,255,0.6);
-      max-width: 500px;
+      font-weight: 300;
+      max-width: 450px;
       margin: 0 auto;
     }
 
+    /* 主要内容区 */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 60px 24px 100px;
     }
 
+    /* 板块标签 */
     .section-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: 24px;
-      font-size: 11px;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      transition: transform 0.3s ease;
     }
 
-    .badge-gaming { background: linear-gradient(135deg, #faece7, #f5c4b3); color: #993c1d; }
-    .badge-ai { background: linear-gradient(135deg, #e6f1fb, #b5d4f4); color: #185fa5; }
-    .badge-golf { background: linear-gradient(135deg, #eaf3de, #c0dd97); color: #3b6d11; }
+    .section-badge:hover {
+      transform: translateY(-2px);
+    }
 
-    .content-section { margin-bottom: 80px; }
+    .badge-gaming {
+      background: linear-gradient(135deg, #fceee9, #f9d9c9);
+      color: #c24a20;
+      box-shadow: 0 4px 15px rgba(224, 120, 80, 0.2);
+    }
+
+    .badge-ai {
+      background: linear-gradient(135deg, #e8f2fc, #c5e0f5);
+      color: #2a6db0;
+      box-shadow: 0 4px 15px rgba(74, 144, 217, 0.2);
+    }
+
+    .badge-golf {
+      background: linear-gradient(135deg, #e5f5ed, #c0e5d0);
+      color: #1e8a55;
+      box-shadow: 0 4px 15px rgba(46, 184, 144, 0.2);
+    }
+
+    .section-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* 内容板块 */
+    .content-section {
+      margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .content-section:nth-child(1) { animation-delay: 0.1s; }
+    .content-section:nth-child(2) { animation-delay: 0.2s; }
+    .content-section:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .section-header {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid var(--text-primary);
+      gap: 20px;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
     }
 
     .section-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 600;
+      letter-spacing: 1px;
     }
 
-    .section-line { flex: 1; height: 1px; background: var(--border-light); }
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-left: auto;
+    }
 
+    /* 文章网格 */
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
     }
 
+    /* 文章卡片 */
     .article-card {
       background: var(--bg-card);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  box-shadow 0.4s ease;
       border: 1px solid var(--border-light);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
     }
 
     .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
     }
 
     .article-card.featured {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.3fr 1fr;
+      border: none;
+      background: transparent;
+    }
+
+    .featured-inner {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
     }
 
     @media (max-width: 768px) {
-      .article-card.featured { grid-template-columns: 1fr; }
+      .article-card.featured {
+        grid-template-columns: 1fr;
+      }
     }
 
     .article-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-light) 100%);
+      transition: transform 0.6s ease;
+    }
+
+    .article-card:hover .article-image {
+      transform: scale(1.05);
     }
 
     .article-card.featured .article-image {
       height: 100%;
-      min-height: 280px;
+      min-height: 300px;
+      border-radius: 16px 0 0 16px;
     }
 
-    .article-content { padding: 24px; }
+    .article-content {
+      padding: 28px;
+    }
+
+    .article-card.featured .article-content {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .article-meta {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 12px;
+      gap: 14px;
+      margin-bottom: 14px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
-    .article-source { font-weight: 500; }
+    .article-source {
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
 
-    .article-time { display: flex; align-items: center; gap: 4px; }
+    .source-gaming { color: var(--accent-coral); }
+    .source-ai { color: var(--accent-blue); }
+    .source-golf { color: var(--accent-teal); }
+
+    .article-time {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
     .article-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 20px;
       font-weight: 600;
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: var(--text-primary);
+      transition: color 0.3s ease;
     }
 
-    .article-card.featured .article-title { font-size: 28px; }
+    .article-card:hover .article-title {
+      color: var(--accent-coral);
+    }
+
+    .article-card.featured .article-title {
+      font-size: 28px;
+      line-height: 1.3;
+    }
 
     .article-excerpt {
       font-size: 15px;
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .tag {
-      padding: 4px 12px;
+      padding: 5px 14px;
       background: var(--bg-secondary);
-      border-radius: 16px;
+      border-radius: 20px;
       font-size: 12px;
       color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+      background: var(--border-light);
+      color: var(--text-secondary);
     }
 
     .read-more {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       color: var(--text-primary);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
-      margin-top: 16px;
-      transition: gap 0.2s ease;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--bg-secondary);
+      border-radius: 25px;
+      transition: all 0.3s ease;
     }
 
-    .read-more:hover { gap: 10px; }
+    .read-more:hover {
+      background: var(--text-primary);
+      color: #fff;
+      gap: 12px;
+    }
 
+    /* 页脚 */
     .footer {
       background: #1a1a1a;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.5);
       text-align: center;
-      padding: 40px 24px;
-      font-size: 13px;
+      padding: 60px 24px;
     }
 
     .footer-brand {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
+      font-size: 24px;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .footer-tagline {
+      font-size: 14px;
+      margin-bottom: 30px;
+      opacity: 0.6;
     }
 
-    .animate-in { animation: fadeInUp 0.6s ease forwards; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
 
+    .footer-link {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      opacity: 0.3;
+    }
+
+    /* 响应式 */
     @media (max-width: 640px) {
-      .header { padding: 40px 20px 30px; }
-      .container { padding: 24px 16px 60px; }
-      .articles-grid { grid-template-columns: 1fr; }
-      .section-title { font-size: 22px; }
+      .header {
+        padding: 50px 20px 40px;
+      }
+      
+      .container {
+        padding: 40px 16px 60px;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .article-title {
+        font-size: 18px;
+      }
+
+      .article-card.featured .article-title {
+        font-size: 22px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- 头部 -->
   <header class="header">
-    <div class="header-date">{{DATE}}</div>
-    <h1 class="header-title">每日文摘</h1>
-    <p class="header-subtitle">精选游戏、AI科技、高尔夫运动领域的每日资讯，为你呈现最有价值的内容</p>
+    <div class="header-content">
+      <div class="header-date" id="currentDate"></div>
+      <h1 class="header-title">每日<span>文摘</span></h1>
+      <p class="header-subtitle">为你精选游戏、AI科技、高尔夫运动领域的每日资讯，洞悉行业前沿</p>
+    </div>
   </header>
 
   <main class="container">
-    {{GAMING_CONTENT}}
-    {{AI_CONTENT}}
-    {{GOLF_CONTENT}}
+    {{CONTENT}}
   </main>
 
+  <!-- 页脚 -->
   <footer class="footer">
     <div class="footer-brand">每日文摘</div>
-    <p>每日更新 · 游戏 · AI · 高尔夫</p>
-    <p style="margin-top: 16px; opacity: 0.4;">Powered by Automated Content System</p>
+    <p class="footer-tagline">每日更新 · 游戏 · AI · 高尔夫</p>
+    <div class="footer-links">
+      <a href="#" class="footer-link">关于我们</a>
+      <a href="#" class="footer-link">订阅方式</a>
+      <a href="#" class="footer-link">联系方式</a>
+    </div>
+    <p class="footer-copy">© 2026 Daily Digest. Powered by Automated Content System.</p>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('animate-in');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.article-card').forEach(card => observer.observe(card));
+    // 显示当前日期
+    const dateEl = document.getElementById('currentDate');
+    const now = new Date();
+    const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${weekDays[now.getDay()]}`;
+    const volume = `${now.getFullYear() - 2000}${(now.getMonth() + 1).toString().padStart(2, '0')}`;
+    dateEl.textContent = `${dateStr} · 第 ${volume} 期`;
   </script>
 
 </body>

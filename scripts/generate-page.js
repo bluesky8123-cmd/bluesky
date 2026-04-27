@@ -16,18 +16,6 @@ function loadContent() {
   return null;
 }
 
-// 格式化日期
-function formatDate(date) {
-  const d = new Date(date);
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    weekday: 'long'
-  };
-  return d.toLocaleDateString('zh-CN', options);
-}
-
 // 相对时间
 function timeAgo(date) {
   const now = new Date();
@@ -37,43 +25,49 @@ function timeAgo(date) {
   if (diff < 60) return '刚刚';
   if (diff < 3600) return `${Math.floor(diff / 60)} 分钟前`;
   if (diff < 86400) return `${Math.floor(diff / 3600)} 小时前`;
-  return '昨天';
+  if (diff < 172800) return '昨天';
+  return Math.floor(diff / 86400) + ' 天前';
 }
 
 // 生成文章卡片 HTML
 function generateArticleCard(article, category) {
-  const colorMap = {
-    gaming: { accent: '#d85a30', tag: 'badge-gaming' },
-    ai: { accent: '#378add', tag: 'badge-ai' },
-    golf: { accent: '#1d9e75', tag: 'badge-golf' }
+  const colorClass = `source-${category}`;
+  const icons = {
+    gaming: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h2M15 13h2"/></svg>`,
+    ai: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
+    golf: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`
   };
-  const colors = colorMap[category];
   
   let html = '';
   
   if (article.isFeatured) {
-    html += `
-    <article class="article-card featured">
-      ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : ''}
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source" style="color: ${colors.accent}">${article.source}</span>
-          <span class="article-time">${timeAgo(article.publishedAt)}</span>
+    html = `
+    <div class="article-card featured">
+      <img src="${article.image}" alt="${article.title}" class="article-image">
+      <div class="featured-inner">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source ${colorClass}">${article.source}</span>
+            <span class="article-time">${timeAgo(article.publishedAt)}</span>
+          </div>
+          <h3 class="article-title">${article.title}</h3>
+          <p class="article-excerpt">${article.excerpt}</p>
+          <div class="article-tags">
+            ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+          <a href="${article.url}" target="_blank" class="read-more">
+            阅读原文
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <h3 class="article-title">${article.title}</h3>
-        <p class="article-excerpt">${article.excerpt}</p>
-        <div class="article-tags">
-          ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-        </div>
-        <a href="${article.url}" target="_blank" class="read-more">阅读原文 →</a>
       </div>
-    </article>`;
+    </div>`;
   } else {
-    html += `
+    html = `
     <article class="article-card">
       <div class="article-content">
         <div class="article-meta">
-          <span class="article-source" style="color: ${colors.accent}">${article.source}</span>
+          <span class="article-source ${colorClass}">${article.source}</span>
           <span class="article-time">${timeAgo(article.publishedAt)}</span>
         </div>
         <h3 class="article-title">${article.title}</h3>
@@ -89,8 +83,11 @@ function generateArticleCard(article, category) {
 }
 
 // 生成板块 HTML
-function generateSection(articles, category, title, icon) {
+function generateSection(articles, category, title, icon, subtitle) {
+  if (articles.length === 0) return '';
+  
   const badgeClass = `badge-${category}`;
+  const categoryName = category === 'gaming' ? 'Gaming' : category === 'ai' ? 'AI' : 'Golf';
   
   return `
     <section class="content-section">
@@ -100,8 +97,8 @@ function generateSection(articles, category, title, icon) {
       </div>
 
       <div class="section-header">
-        <h2 class="section-title">${category === 'gaming' ? 'Gaming' : category === 'ai' ? 'Artificial Intelligence' : 'Golf'}</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">${categoryName}</h2>
+        <span class="section-subtitle">${subtitle}</span>
       </div>
 
       <div class="articles-grid">
@@ -119,33 +116,24 @@ function generatePage() {
     return;
   }
   
-  const today = formatDate(new Date());
-  
   // 读取模板
   const templatePath = path.join(__dirname, '..', 'template.html');
   let template = fs.readFileSync(templatePath, 'utf-8');
   
-  // 替换内容占位符
-  template = template.replace('{{DATE}}', today);
-  template = template.replace('{{GAMING_CONTENT}}', generateSection(content.gaming, 'gaming', '游戏行业', `
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="2" y="6" width="20" height="12" rx="2"/>
-      <path d="M6 12h4M8 10v4M15 11h2M15 13h2"/>
-    </svg>
-  `));
-  template = template.replace('{{AI_CONTENT}}', generateSection(content.ai, 'ai', 'AI 科技', `
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-    </svg>
-  `));
-  template = template.replace('{{GOLF_CONTENT}}', generateSection(content.golf, 'golf', '高尔夫', `
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M2 12h20"/>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </svg>
-  `));
+  // 生成内容
+  const sections = [
+    generateSection(content.gaming, 'gaming', '游戏行业', `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h2M15 13h2"/></svg>
+    `, '游戏开发 · 行业动态'),
+    generateSection(content.ai, 'ai', 'AI 科技', `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+    `, '人工智能 · 技术前沿'),
+    generateSection(content.golf, 'golf', '高尔夫', `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    `, '技巧教学 · 巡回赛况')
+  ];
+  
+  template = template.replace('{{CONTENT}}', sections.join('\n'));
   
   // 保存生成的页面
   const outputPath = path.join(__dirname, '..', 'index.html');

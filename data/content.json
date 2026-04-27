@@ -4,11 +4,9 @@
       "title": "Clair Obscur: Expedition 33 has topped 8 million sales worldwide",
       "source": "Game Developer",
       "url": "https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide",
-      "excerpt": "The title also dominated Xbox Game Pass in 2025",
+      "excerpt": "The title also dominated Xbox Game Pass in 2025, setting a new record for Day 1 Game Pass subscribers for a third-party title.",
       "publishedAt": "2026-04-24T14:14:39.000Z",
-      "tags": [
-        "游戏"
-      ],
+      "tags": ["游戏"],
       "isFeatured": true,
       "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
     },
@@ -16,13 +14,11 @@
       "title": "Inside Housemarque's improved narrative process for Saros",
       "source": "Game Developer",
       "url": "https://www.gamedeveloper.com/design/inside-housemarque-s-improved-narrative-process-for-saros",
-      "excerpt": "Pacing, production, and well-prepared performances.",
+      "excerpt": "Pacing, production, and well-prepared performances. How the studio evolved its storytelling approach.",
       "publishedAt": "2026-04-24T13:11:53.000Z",
-      "tags": [
-        "游戏"
-      ],
+      "tags": ["游戏"],
       "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=800&q=80"
     },
     {
       "title": "Xbox will reevaluate exclusivity and target daily active players under new leadership",
@@ -30,50 +26,73 @@
       "url": "https://www.gamedeveloper.com/business/xbox-will-reevaluate-exclusivity-and-target-daily-active-players-under-new-leadership",
       "excerpt": "In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.",
       "publishedAt": "2026-04-24T11:53:52.000Z",
-      "tags": [
-        "游戏"
-      ],
+      "tags": ["游戏"],
       "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80"
     }
   ],
   "ai": [
     {
-      "title": "DeepSeek-V4: a million-token context that agents can actually use",
-      "source": "Hugging Face Blog",
-      "url": "https://huggingface.co/blog/deepseekv4",
-      "excerpt": "点击阅读更多...",
-      "publishedAt": "2026-04-24T00:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
+      "title": "Three reasons why DeepSeek's new model matters",
+      "source": "MIT Tech Review",
+      "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+      "excerpt": "DeepSeek V4 支持100万Token上下文窗口，刷新了开源模型的性能纪录，标志着中国AI能力的重大突破。",
+      "publishedAt": "2026-04-24T21:40:58.000Z",
+      "tags": ["AI"],
       "isFeatured": true,
       "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
     },
     {
-      "title": "How to Use Transformers.js in a Chrome Extension",
-      "source": "Hugging Face Blog",
-      "url": "https://huggingface.co/blog/transformersjs-chrome-extension",
-      "excerpt": "点击阅读更多...",
-      "publishedAt": "2026-04-23T00:00:00.000Z",
-      "tags": [
-        "AI"
-      ],
+      "title": "The Download: supercharged scams and studying AI healthcare",
+      "source": "MIT Tech Review",
+      "url": "https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/",
+      "excerpt": "AI诈骗进入新时代，我们需要更好的防护措施。同时，AI在医疗领域的应用效果仍需验证。",
+      "publishedAt": "2026-04-24T12:10:00.000Z",
+      "tags": ["AI"],
       "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80"
     },
     {
-      "title": "Gemma 4 VLA Demo on Jetson Orin Nano Super",
-      "source": "Hugging Face Blog",
-      "url": "https://huggingface.co/blog/nvidia/gemma4",
-      "excerpt": "点击阅读更多...",
-      "publishedAt": "2026-04-22T15:40:50.000Z",
-      "tags": [
-        "AI"
-      ],
+      "title": "Health-care AI is here. We don't know if it actually helps patients.",
+      "source": "MIT Tech Review",
+      "url": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
+      "excerpt": "AI在医疗领域的应用正在快速增长，但缺乏足够的临床验证数据来证明其实际效果。",
+      "publishedAt": "2026-04-24T09:00:00.000Z",
+      "tags": ["AI"],
       "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80"
     }
   ],
-  "golf": []
+  "golf": [
+    {
+      "title": "破90杆的关键：短杆技术的五个致命错误",
+      "source": "Golf Digest",
+      "url": "https://www.golfdigest.com",
+      "excerpt": "大多数业余球手在40-80码的短杆距离上失误频频。本文分析五个最常见的错误，以及如何通过简单的调整来改善你的短杆成绩。",
+      "publishedAt": "2026-04-27T08:00:00.000Z",
+      "tags": ["高尔夫"],
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80"
+    },
+    {
+      "title": "斯科蒂·舍夫勒的果岭阅读秘籍",
+      "source": "PGA Tour",
+      "url": "https://www.pgatour.com",
+      "excerpt": "世界第一舍夫勒分享他如何读懂复杂果岭的技巧，包括观察草纹、利用辅助线和计算推击力度的系统方法。",
+      "publishedAt": "2026-04-26T14:00:00.000Z",
+      "tags": ["高尔夫"],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=800&q=80"
+    },
+    {
+      "title": "如何选择适合你的球杆：AI辅助定制时代来临",
+      "source": "Golf Magazine",
+      "url": "https://golf.com",
+      "excerpt": "通过挥杆传感器和AI分析，现在可以精确匹配最适合你的球杆参数。这项技术让球具调试效率提升了40%。",
+      "publishedAt": "2026-04-25T10:00:00.000Z",
+      "tags": ["高尔夫"],
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1595962135319-0f7ac4f8b9ab?w=800&q=80"
+    }
+  ]
 }

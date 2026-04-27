@@ -6,20 +6,21 @@
   <title>每日文摘 · Daily Digest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #fefbf6;
-      --bg-secondary: #faf7f2;
+      --bg-primary: #faf9f7;
+      --bg-secondary: #f4f2ed;
       --bg-card: #ffffff;
       --text-primary: #1a1a1a;
-      --text-secondary: #666666;
-      --text-muted: #999999;
-      --accent-coral: #d85a30;
-      --accent-teal: #1d9e75;
-      --accent-blue: #378add;
-      --border-light: #e8e0d8;
-      --border-medium: #d4c8b8;
+      --text-secondary: #4a4a4a;
+      --text-muted: #8a8a8a;
+      --accent-coral: #e07850;
+      --accent-teal: #2eb890;
+      --accent-blue: #4a90d9;
+      --border-light: #e8e4de;
+      --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.1);
     }
 
     * {
@@ -32,217 +33,431 @@
       font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-primary);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       min-height: 100vh;
     }
 
+    /* 头部设计 */
     .header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2a26 100%);
       color: #fff;
-      padding: 60px 24px 40px;
+      padding: 80px 24px 60px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .header-date {
       font-family: 'Source Sans 3', sans-serif;
-      font-size: 12px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 16px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .header-date::before,
+    .header-date::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
     }
 
     .header-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(32px, 6vw, 56px);
+      font-size: clamp(36px, 7vw, 64px);
       font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .header-title span {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .header-subtitle {
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(255,255,255,0.6);
-      max-width: 500px;
+      font-weight: 300;
+      max-width: 450px;
       margin: 0 auto;
     }
 
+    /* 主要内容区 */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 60px 24px 100px;
     }
 
+    /* 板块标签 */
     .section-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: 24px;
-      font-size: 11px;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      transition: transform 0.3s ease;
     }
 
-    .badge-gaming { background: linear-gradient(135deg, #faece7, #f5c4b3); color: #993c1d; }
-    .badge-ai { background: linear-gradient(135deg, #e6f1fb, #b5d4f4); color: #185fa5; }
-    .badge-golf { background: linear-gradient(135deg, #eaf3de, #c0dd97); color: #3b6d11; }
+    .section-badge:hover {
+      transform: translateY(-2px);
+    }
 
-    .content-section { margin-bottom: 80px; }
+    .badge-gaming {
+      background: linear-gradient(135deg, #fceee9, #f9d9c9);
+      color: #c24a20;
+      box-shadow: 0 4px 15px rgba(224, 120, 80, 0.2);
+    }
+
+    .badge-ai {
+      background: linear-gradient(135deg, #e8f2fc, #c5e0f5);
+      color: #2a6db0;
+      box-shadow: 0 4px 15px rgba(74, 144, 217, 0.2);
+    }
+
+    .badge-golf {
+      background: linear-gradient(135deg, #e5f5ed, #c0e5d0);
+      color: #1e8a55;
+      box-shadow: 0 4px 15px rgba(46, 184, 144, 0.2);
+    }
+
+    .section-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* 内容板块 */
+    .content-section {
+      margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .content-section:nth-child(1) { animation-delay: 0.1s; }
+    .content-section:nth-child(2) { animation-delay: 0.2s; }
+    .content-section:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .section-header {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid var(--text-primary);
+      gap: 20px;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
     }
 
     .section-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 600;
+      letter-spacing: 1px;
     }
 
-    .section-line { flex: 1; height: 1px; background: var(--border-light); }
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-left: auto;
+    }
 
+    /* 文章网格 */
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
     }
 
+    /* 文章卡片 */
     .article-card {
       background: var(--bg-card);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  box-shadow 0.4s ease;
       border: 1px solid var(--border-light);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
     }
 
     .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
     }
 
     .article-card.featured {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.3fr 1fr;
+      border: none;
+      background: transparent;
+    }
+
+    .featured-inner {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
     }
 
     @media (max-width: 768px) {
-      .article-card.featured { grid-template-columns: 1fr; }
+      .article-card.featured {
+        grid-template-columns: 1fr;
+      }
     }
 
     .article-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-light) 100%);
+      transition: transform 0.6s ease;
+    }
+
+    .article-card:hover .article-image {
+      transform: scale(1.05);
     }
 
     .article-card.featured .article-image {
       height: 100%;
-      min-height: 280px;
+      min-height: 300px;
+      border-radius: 16px 0 0 16px;
     }
 
-    .article-content { padding: 24px; }
+    .article-content {
+      padding: 28px;
+    }
+
+    .article-card.featured .article-content {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .article-meta {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 12px;
+      gap: 14px;
+      margin-bottom: 14px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
-    .article-source { font-weight: 500; }
+    .article-source {
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
 
-    .article-time { display: flex; align-items: center; gap: 4px; }
+    .source-gaming { color: var(--accent-coral); }
+    .source-ai { color: var(--accent-blue); }
+    .source-golf { color: var(--accent-teal); }
+
+    .article-time {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
     .article-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 20px;
       font-weight: 600;
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: var(--text-primary);
+      transition: color 0.3s ease;
     }
 
-    .article-card.featured .article-title { font-size: 28px; }
+    .article-card:hover .article-title {
+      color: var(--accent-coral);
+    }
+
+    .article-card.featured .article-title {
+      font-size: 28px;
+      line-height: 1.3;
+    }
 
     .article-excerpt {
       font-size: 15px;
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .tag {
-      padding: 4px 12px;
+      padding: 5px 14px;
       background: var(--bg-secondary);
-      border-radius: 16px;
+      border-radius: 20px;
       font-size: 12px;
       color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+      background: var(--border-light);
+      color: var(--text-secondary);
     }
 
     .read-more {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       color: var(--text-primary);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
-      margin-top: 16px;
-      transition: gap 0.2s ease;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--bg-secondary);
+      border-radius: 25px;
+      transition: all 0.3s ease;
     }
 
-    .read-more:hover { gap: 10px; }
+    .read-more:hover {
+      background: var(--text-primary);
+      color: #fff;
+      gap: 12px;
+    }
 
+    /* 页脚 */
     .footer {
       background: #1a1a1a;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.5);
       text-align: center;
-      padding: 40px 24px;
-      font-size: 13px;
+      padding: 60px 24px;
     }
 
     .footer-brand {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
+      font-size: 24px;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .footer-tagline {
+      font-size: 14px;
+      margin-bottom: 30px;
+      opacity: 0.6;
     }
 
-    .animate-in { animation: fadeInUp 0.6s ease forwards; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
 
+    .footer-link {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      opacity: 0.3;
+    }
+
+    /* 响应式 */
     @media (max-width: 640px) {
-      .header { padding: 40px 20px 30px; }
-      .container { padding: 24px 16px 60px; }
-      .articles-grid { grid-template-columns: 1fr; }
-      .section-title { font-size: 22px; }
+      .header {
+        padding: 50px 20px 40px;
+      }
+      
+      .container {
+        padding: 40px 16px 60px;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .article-title {
+        font-size: 18px;
+      }
+
+      .article-card.featured .article-title {
+        font-size: 22px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- 头部 -->
   <header class="header">
-    <div class="header-date">2026年4月27日星期一</div>
-    <h1 class="header-title">每日文摘</h1>
-    <p class="header-subtitle">精选游戏、AI科技、高尔夫运动领域的每日资讯，为你呈现最有价值的内容</p>
+    <div class="header-content">
+      <div class="header-date" id="currentDate"></div>
+      <h1 class="header-title">每日<span>文摘</span></h1>
+      <p class="header-subtitle">为你精选游戏、AI科技、高尔夫运动领域的每日资讯，洞悉行业前沿</p>
+    </div>
   </header>
 
   <main class="container">
@@ -250,44 +465,46 @@
     <section class="content-section">
       <div class="section-badge badge-gaming">
         
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="2" y="6" width="20" height="12" rx="2"/>
-      <path d="M6 12h4M8 10v4M15 11h2M15 13h2"/>
-    </svg>
-  
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h2M15 13h2"/></svg>
+    
         游戏行业
       </div>
 
       <div class="section-header">
         <h2 class="section-title">Gaming</h2>
-        <div class="section-line"></div>
+        <span class="section-subtitle">游戏开发 · 行业动态</span>
       </div>
 
       <div class="articles-grid">
         
-    <article class="article-card featured">
+    <div class="article-card featured">
       <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Clair Obscur: Expedition 33 has topped 8 million sales worldwide" class="article-image">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source" style="color: #d85a30">Game Developer</span>
-          <span class="article-time">昨天</span>
+      <div class="featured-inner">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source source-gaming">Game Developer</span>
+            <span class="article-time">2 天前</span>
+          </div>
+          <h3 class="article-title">Clair Obscur: Expedition 33 has topped 8 million sales worldwide</h3>
+          <p class="article-excerpt">The title also dominated Xbox Game Pass in 2025, setting a new record for Day 1 Game Pass subscribers for a third-party title.</p>
+          <div class="article-tags">
+            <span class="tag">游戏</span>
+          </div>
+          <a href="https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide" target="_blank" class="read-more">
+            阅读原文
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <h3 class="article-title">Clair Obscur: Expedition 33 has topped 8 million sales worldwide</h3>
-        <p class="article-excerpt">The title also dominated Xbox Game Pass in 2025</p>
-        <div class="article-tags">
-          <span class="tag">游戏</span>
-        </div>
-        <a href="https://www.gamedeveloper.com/business/clair-obscur-expedition-33-has-topped-8-million-sales-worldwide" target="_blank" class="read-more">阅读原文 →</a>
       </div>
-    </article>
+    </div>
     <article class="article-card">
       <div class="article-content">
         <div class="article-meta">
-          <span class="article-source" style="color: #d85a30">Game Developer</span>
-          <span class="article-time">昨天</span>
+          <span class="article-source source-gaming">Game Developer</span>
+          <span class="article-time">2 天前</span>
         </div>
         <h3 class="article-title">Inside Housemarque's improved narrative process for Saros</h3>
-        <p class="article-excerpt">Pacing, production, and well-prepared performances.</p>
+        <p class="article-excerpt">Pacing, production, and well-prepared performances. How the studio evolved its storytelling approach.</p>
         <div class="article-tags">
           <span class="tag">游戏</span>
         </div>
@@ -296,8 +513,8 @@
     <article class="article-card">
       <div class="article-content">
         <div class="article-meta">
-          <span class="article-source" style="color: #d85a30">Game Developer</span>
-          <span class="article-time">昨天</span>
+          <span class="article-source source-gaming">Game Developer</span>
+          <span class="article-time">2 天前</span>
         </div>
         <h3 class="article-title">Xbox will reevaluate exclusivity and target daily active players under new leadership</h3>
         <p class="article-excerpt">In a message sent to Xbox employees around the world, Asha Sharma and Matt Booty have laid out their vision for Microsoft's video game business.</p>
@@ -308,61 +525,63 @@
     </article>
       </div>
     </section>
-    
+
     <section class="content-section">
       <div class="section-badge badge-ai">
         
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-    </svg>
-  
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+    
         AI 科技
       </div>
 
       <div class="section-header">
-        <h2 class="section-title">Artificial Intelligence</h2>
-        <div class="section-line"></div>
+        <h2 class="section-title">AI</h2>
+        <span class="section-subtitle">人工智能 · 技术前沿</span>
       </div>
 
       <div class="articles-grid">
         
-    <article class="article-card featured">
-      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="DeepSeek-V4: a million-token context that agents can actually use" class="article-image">
+    <div class="article-card featured">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="Three reasons why DeepSeek's new model matters" class="article-image">
+      <div class="featured-inner">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source source-ai">MIT Tech Review</span>
+            <span class="article-time">2 天前</span>
+          </div>
+          <h3 class="article-title">Three reasons why DeepSeek's new model matters</h3>
+          <p class="article-excerpt">DeepSeek V4 支持100万Token上下文窗口，刷新了开源模型的性能纪录，标志着中国AI能力的重大突破。</p>
+          <div class="article-tags">
+            <span class="tag">AI</span>
+          </div>
+          <a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" class="read-more">
+            阅读原文
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <article class="article-card">
       <div class="article-content">
         <div class="article-meta">
-          <span class="article-source" style="color: #378add">Hugging Face Blog</span>
-          <span class="article-time">昨天</span>
+          <span class="article-source source-ai">MIT Tech Review</span>
+          <span class="article-time">2 天前</span>
         </div>
-        <h3 class="article-title">DeepSeek-V4: a million-token context that agents can actually use</h3>
-        <p class="article-excerpt">点击阅读更多...</p>
+        <h3 class="article-title">The Download: supercharged scams and studying AI healthcare</h3>
+        <p class="article-excerpt">AI诈骗进入新时代，我们需要更好的防护措施。同时，AI在医疗领域的应用效果仍需验证。</p>
         <div class="article-tags">
           <span class="tag">AI</span>
         </div>
-        <a href="https://huggingface.co/blog/deepseekv4" target="_blank" class="read-more">阅读原文 →</a>
       </div>
     </article>
     <article class="article-card">
       <div class="article-content">
         <div class="article-meta">
-          <span class="article-source" style="color: #378add">Hugging Face Blog</span>
-          <span class="article-time">昨天</span>
+          <span class="article-source source-ai">MIT Tech Review</span>
+          <span class="article-time">2 天前</span>
         </div>
-        <h3 class="article-title">How to Use Transformers.js in a Chrome Extension</h3>
-        <p class="article-excerpt">点击阅读更多...</p>
-        <div class="article-tags">
-          <span class="tag">AI</span>
-        </div>
-      </div>
-    </article>
-    <article class="article-card">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="article-source" style="color: #378add">Hugging Face Blog</span>
-          <span class="article-time">昨天</span>
-        </div>
-        <h3 class="article-title">Gemma 4 VLA Demo on Jetson Orin Nano Super</h3>
-        <p class="article-excerpt">点击阅读更多...</p>
+        <h3 class="article-title">Health-care AI is here. We don't know if it actually helps patients.</h3>
+        <p class="article-excerpt">AI在医疗领域的应用正在快速增长，但缺乏足够的临床验证数据来证明其实际效果。</p>
         <div class="article-tags">
           <span class="tag">AI</span>
         </div>
@@ -370,44 +589,92 @@
     </article>
       </div>
     </section>
-    
+
     <section class="content-section">
       <div class="section-badge badge-golf">
         
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M2 12h20"/>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </svg>
-  
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    
         高尔夫
       </div>
 
       <div class="section-header">
         <h2 class="section-title">Golf</h2>
-        <div class="section-line"></div>
+        <span class="section-subtitle">技巧教学 · 巡回赛况</span>
       </div>
 
       <div class="articles-grid">
         
+    <div class="article-card featured">
+      <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80" alt="破90杆的关键：短杆技术的五个致命错误" class="article-image">
+      <div class="featured-inner">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source source-golf">Golf Digest</span>
+            <span class="article-time">刚刚</span>
+          </div>
+          <h3 class="article-title">破90杆的关键：短杆技术的五个致命错误</h3>
+          <p class="article-excerpt">大多数业余球手在40-80码的短杆距离上失误频频。本文分析五个最常见的错误，以及如何通过简单的调整来改善你的短杆成绩。</p>
+          <div class="article-tags">
+            <span class="tag">高尔夫</span>
+          </div>
+          <a href="https://www.golfdigest.com" target="_blank" class="read-more">
+            阅读原文
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <article class="article-card">
+      <div class="article-content">
+        <div class="article-meta">
+          <span class="article-source source-golf">PGA Tour</span>
+          <span class="article-time">17 小时前</span>
+        </div>
+        <h3 class="article-title">斯科蒂·舍夫勒的果岭阅读秘籍</h3>
+        <p class="article-excerpt">世界第一舍夫勒分享他如何读懂复杂果岭的技巧，包括观察草纹、利用辅助线和计算推击力度的系统方法。</p>
+        <div class="article-tags">
+          <span class="tag">高尔夫</span>
+        </div>
+      </div>
+    </article>
+    <article class="article-card">
+      <div class="article-content">
+        <div class="article-meta">
+          <span class="article-source source-golf">Golf Magazine</span>
+          <span class="article-time">昨天</span>
+        </div>
+        <h3 class="article-title">如何选择适合你的球杆：AI辅助定制时代来临</h3>
+        <p class="article-excerpt">通过挥杆传感器和AI分析，现在可以精确匹配最适合你的球杆参数。这项技术让球具调试效率提升了40%。</p>
+        <div class="article-tags">
+          <span class="tag">高尔夫</span>
+        </div>
+      </div>
+    </article>
       </div>
     </section>
   </main>
 
+  <!-- 页脚 -->
   <footer class="footer">
     <div class="footer-brand">每日文摘</div>
-    <p>每日更新 · 游戏 · AI · 高尔夫</p>
-    <p style="margin-top: 16px; opacity: 0.4;">Powered by Automated Content System</p>
+    <p class="footer-tagline">每日更新 · 游戏 · AI · 高尔夫</p>
+    <div class="footer-links">
+      <a href="#" class="footer-link">关于我们</a>
+      <a href="#" class="footer-link">订阅方式</a>
+      <a href="#" class="footer-link">联系方式</a>
+    </div>
+    <p class="footer-copy">© 2026 Daily Digest. Powered by Automated Content System.</p>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('animate-in');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.article-card').forEach(card => observer.observe(card));
+    // 显示当前日期
+    const dateEl = document.getElementById('currentDate');
+    const now = new Date();
+    const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${weekDays[now.getDay()]}`;
+    const volume = `${now.getFullYear() - 2000}${(now.getMonth() + 1).toString().padStart(2, '0')}`;
+    dateEl.textContent = `${dateStr} · 第 ${volume} 期`;
   </script>
 
 </body>
