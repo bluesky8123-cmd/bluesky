@@ -1,6 +1,18 @@
 {
   "gaming": [
     {
+      "title": "上海烛龙公布合作遗迹探险游戏《吉时已到》首支预告片",
+      "source": "机核",
+      "url": "https://www.gcores.com/articles/213864",
+      "excerpt": "上海烛龙今日公布了合作遗迹探险游戏《吉时已到》的首支预告片，这是一款由上海烛龙工作室研发的合作遗迹探险游戏。 玩家将共赴失落已久的地宫与遗迹，闯杀局、破机关、斗诡物，追寻深埋于时间中的故事与秘藏。 探穴且看山势走，龙脉结处有水口。洛阳铲下观土色，五花土里埋金斗。 机括连环三重九，祖宗仙骨莫惊动。鸡鸣灯灭命该休，贪心不足鬼来收。 <内嵌内容，请前往机核查看> 本作基于虚幻引擎5开发，未来将以买断制形式登录PC及主机平台。 ]]>",
+      "publishedAt": "2026-04-28T03:36:54.000Z",
+      "tags": [
+        "游戏"
+      ],
+      "isFeatured": true,
+      "image": "https://image.gcores.com/a27298afe7c1ff3f30ab2eb6152fff8e-1920-1080.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90"
+    },
+    {
       "title": "喜加一：《暗黑破坏神Ⅳ》国服现已开启限时免费领取本体活动",
       "source": "机核",
       "url": "https://www.gcores.com/articles/213858",
@@ -9,7 +21,7 @@
       "tags": [
         "游戏"
       ],
-      "isFeatured": true,
+      "isFeatured": false,
       "image": "https://image.gcores.com/a18e20f8ef61cf61ee69b6f469a9d81c-1920-1080.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90"
     },
     {
@@ -37,18 +49,6 @@
       "image": "https://image.gcores.com/8ae6a6f9900bd00cf561b87ceb01f385-920-430.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90"
     },
     {
-      "title": "Steam Controller将于5月4日发售，售价99美元",
-      "source": "机核",
-      "url": "https://www.gcores.com/articles/213854",
-      "excerpt": "V社于日前宣布，Steam Controller 将于5月4日发售，售价99美元（约合675人民币）。V社表示，玩家终于可以上手，也令他们十分激动。 大家可以在 产品的官方页面 上获取关于 Steam Controller 的更多信息，以下是来自官方的介绍： Steam Controller 配备了让玩家畅玩 Steam 库里所有游戏所需的全部输入，不论您希望在哪里玩。 PC？ 行。 笔记本？ 没问题。 Steam Deck、Steam Machine 和 Steam Frame？ 全都支持。 ",
-      "publishedAt": "2026-04-28T01:13:13.000Z",
-      "tags": [
-        "游戏"
-      ],
-      "isFeatured": false,
-      "image": "https://image.gcores.com/41fc043f614aeeb1a27533a185c45e5b-940-378.gif?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90"
-    },
-    {
       "title": "为什么Steam控制器是（也不是）一件大事",
       "source": "The Verge 游戏",
       "url": "https://www.theverge.com/tech/918115/steam-controller-2026-pc-deck-machine-hands-on-features",
@@ -63,6 +63,18 @@
   ],
   "ai": [
     {
+      "title": "印度的Snabbit完成了5600万美元的$轮融资，投资者对按需家居服务的兴趣升温",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/27/indias-snabbit-closes-56m-round-as-investor-interest-heats-up-in-on-demand-home-services/",
+      "excerpt": "Snabbit现在每天处理超过4万个工作岗位，随着其在城市和服务领域的扩张，大幅削减了成本。",
+      "publishedAt": "2026-04-28T03:30:00.000Z",
+      "tags": [
+        "AI"
+      ],
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+    },
+    {
       "title": "谷歌正在测试YouTube的人工智能聊天机器人搜索",
       "source": "The Verge AI",
       "url": "https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search",
@@ -71,7 +83,7 @@
       "tags": [
         "AI"
       ],
-      "isFeatured": true,
+      "isFeatured": false,
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/Screenshot-2026-04-27-at-4.55.32PM.png?quality=90&#038;strip=all&#038;crop=0,0,100,100"
     },
     {
@@ -84,7 +96,7 @@
         "AI"
       ],
       "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80"
     },
     {
       "title": "每月下载100万次的开源软件包窃取了用户凭据",
@@ -109,18 +121,6 @@
       ],
       "isFeatured": false,
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK_414_AI_CHATBOT_R2_CVirginia_D.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
-    },
-    {
-      "title": "据报道，电影爱好者的社交平台Letterboxd正在寻找新主人",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/04/27/letterboxd-sale-film-social-media-semafor-versant-ankler/",
-      "excerpt": "根据Semafor的说法， Letterboxd的潜在买家包括CNBC和MS NOW的母公司Versant ，以及好莱坞媒体公司The Ankler。",
-      "publishedAt": "2026-04-27T20:37:49.000Z",
-      "tags": [
-        "AI"
-      ],
-      "isFeatured": false,
-      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
     }
   ],
   "golf": [
@@ -129,12 +129,12 @@
       "source": "ESPN 高尔夫",
       "url": "https://www.espn.com/golf/story/_/id/48613413/liv-golf-set-postpone-june-new-orleans-stop",
       "excerpt": "消息人士周一告诉ESPN的Mark Schlabach ， LIV Golf原定于6月在新奥尔良举行的比赛将被推迟，因为在沙特阿拉伯公共投资基金撤回其承诺后，联盟继续试图获得额外资金",
-      "publishedAt": "2026-04-28T03:42:27.000Z",
+      "publishedAt": "2026-04-28T03:59:00.000Z",
       "tags": [
         "高尔夫"
       ],
       "isFeatured": true,
-      "image": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=800&q=80"
     },
     {
       "title": "奥克兰山在火灾后开设了新的会所",

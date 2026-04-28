@@ -1,0 +1,72 @@
+{
+  "gaming": {
+    "summary": "暴雪回归成为本周最大看点，《暗黑破坏神Ⅳ》国服正式免费开放，标志着网易与暴雪合作重启。与此同时，游戏圈IP收购热潮持续，505母公司收购《明末：渊虚之羽》显示独立游戏的商业价值正在被重新审视。硬件方面，PCIe 5.0固态硬盘让游戏Loading时代加速消亡，而Steam Controller即将发售则延续了Valve对硬件创新的执着。",
+    "articles": [
+      {
+        "title": "喜加一：《暗黑破坏神Ⅳ》国服现已开启限时免费领取本体活动",
+        "source": "机核",
+        "url": "https://www.gcores.com/articles/213858",
+        "excerpt": "暴雪娱乐宣布《暗黑破坏神Ⅳ》国服免费开放，网易与暴雪联合运营。游戏保留原有赛季机制，玩家可免费体验全部剧情内容。"
+      },
+      {
+        "title": "505游戏母公司现已收购《明末：渊虚之羽》IP",
+        "source": "机核",
+        "url": "https://www.gcores.com/articles/213853",
+        "excerpt": "Digital Bros以3200万元收购成都灵泽科技手中《明末：渊虚之羽》全部知识产权，游戏自2025年7月发售以来全球销量已破百万份。"
+      },
+      {
+        "title": "什么硬件，能让游戏Loading界面快速消失？",
+        "source": "机核",
+        "url": "https://www.gcores.com/articles/213845",
+        "excerpt": "长江存储致态PCIe 5.0固态硬盘测试：《博德之门3》读图速度提升近30%，NVIDIA RTX IO与DirectStorage API正改变游戏加载体验。"
+      },
+      {
+        "title": "《冲就完事模拟器2》\"星球大战\"联动DLC正式宣布",
+        "source": "机核",
+        "url": "https://www.gcores.com/articles/213855",
+        "excerpt": "Fun棱镜工作室发布全新DLC\"星际大战特别版\"，收录7个全新星球场景，包含千年隼号驾驶舱等标志性地点，致敬星战40年经典。"
+      },
+      {
+        "title": "新版《生化危机》电影定于9月18日上映，官方网站现已上线",
+        "source": "机核",
+        "url": "https://www.gcores.com/articles/213856",
+        "excerpt": "Netflix确认拍摄《生化危机》系列电视剧第二季，延续双时间线叙事结构并加入更多经典病毒变异体，收视超预期推动续订。"
+      }
+    ]
+  },
+  "ai": {
+    "summary": "AI领域的权力格局正在经历深刻重组。OpenAI与微软的AGI排他协议正式瓦解，OpenAI获得了使用任意云服务商的权利；与此同时，Google面临内部压力，600名员工联名抗议将AI用于军事用途。另一边，前DeepMind研究员创立的Ineffable Intelligence获得11亿美元融资，显示AI基础设施仍是资本追逐的热点。",
+    "articles": [
+      {
+        "title": "OpenAI与微软AGI协议终止：排他性合作画上句号",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/918981/openai-microsoft-renegotiate-contract",
+        "excerpt": "微软与OpenAI的AGI特殊条款废除，OpenAI可使用任何云服务商，收入分成改为2030年截止，标志着两家公司的排他性合作关系大幅弱化。"
+      },
+      {
+        "title": "DeepMind前核心成员创立AI公司，获11亿美元融资",
+        "source": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/",
+        "excerpt": "David Silver创立的Ineffable Intelligence获红杉资本和光速创投领投11亿美元，估值51亿美元，目标是通过强化学习打造不依赖人类数据的超级AI。"
+      },
+      {
+        "title": "600名Google员工联名要求拒绝五角大楼军事AI请求",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/919326/google-ai-pentagon-classified-letter",
+        "excerpt": "超过600名Google员工联名致信CEO，要求拒绝将Google AI模型用于机密军事用途，员工担心重蹈Project Maven覆辙。"
+      },
+      {
+        "title": "Google正在YouTube上测试AI聊天搜索功能",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search",
+        "excerpt": "Google正在测试YouTube AI搜索功能，允许用户用自然语言查找视频内容并直接跳转到精选片段，处于有限测试阶段。"
+      },
+      {
+        "title": "Ubuntu宣布2026年AI功能计划：本地推理优先，不做AI产品",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/tech/919411/canonical-ubuntu-linux-ai-features",
+        "excerpt": "Canonical宣布为Ubuntu添加AI功能，但强调不会成为AI产品，优先考虑模型透明度和本地推理，避免用AI使用量衡量员工绩效。"
+      }
+    ]
+  }
+}

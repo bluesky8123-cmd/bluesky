@@ -487,6 +487,186 @@
       opacity: 0.3;
     }
 
+    /* 精选摘要式布局（游戏和AI板块） */
+    .curated-section {
+      margin-bottom: 60px;
+    }
+
+    /* 摘要框 */
+    .category-summary {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .category-summary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .summary-gaming::before { background: var(--accent-coral); }
+    .summary-ai::before { background: var(--accent-blue); }
+
+    .category-summary .summary-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .summary-gaming .summary-label { color: var(--accent-coral); }
+    .summary-ai .summary-label { color: var(--accent-blue); }
+
+    .category-summary .summary-text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    /* 精选文章列表 */
+    .curated-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .curated-item {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      opacity: 0;
+      transform: translateX(-10px);
+      animation: fadeInRight 0.5s ease forwards;
+    }
+
+    .curated-item:nth-child(1) { animation-delay: 0.1s; }
+    .curated-item:nth-child(2) { animation-delay: 0.15s; }
+    .curated-item:nth-child(3) { animation-delay: 0.2s; }
+    .curated-item:nth-child(4) { animation-delay: 0.25s; }
+    .curated-item:nth-child(5) { animation-delay: 0.3s; }
+
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .curated-item:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-hover);
+      border-color: transparent;
+    }
+
+    .curated-item:hover .curated-title {
+      color: var(--accent-coral);
+    }
+
+    .curated-ai:hover .curated-title {
+      color: var(--accent-blue);
+    }
+
+    .curated-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--border-light);
+      min-width: 40px;
+      text-align: center;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.3s;
+    }
+
+    .curated-item:hover .curated-number {
+      color: var(--accent-coral);
+    }
+
+    .curated-ai:hover .curated-number {
+      color: var(--accent-blue);
+    }
+
+    .curated-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .curated-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .curated-source {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .source-tag-gaming {
+      background: #fceee9;
+      color: #c24a20;
+    }
+
+    .source-tag-ai {
+      background: #e8f2fc;
+      color: #2a6db0;
+    }
+
+    .curated-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .curated-excerpt {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .curated-arrow {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--border-light);
+      transition: all 0.3s;
+    }
+
+    .curated-item:hover .curated-arrow {
+      color: var(--text-secondary);
+      transform: translateX(4px);
+    }
+
     /* 响应式 */
     @media (max-width: 640px) {
       .header {
@@ -516,6 +696,23 @@
       .footer-links {
         flex-direction: column;
         gap: 15px;
+      }
+
+      .category-summary {
+        padding: 24px 20px;
+      }
+
+      .curated-item {
+        padding: 16px 18px;
+      }
+
+      .curated-number {
+        font-size: 22px;
+        min-width: 30px;
+      }
+
+      .curated-title {
+        font-size: 15px;
       }
     }
   </style>

@@ -487,6 +487,186 @@
       opacity: 0.3;
     }
 
+    /* 精选摘要式布局（游戏和AI板块） */
+    .curated-section {
+      margin-bottom: 60px;
+    }
+
+    /* 摘要框 */
+    .category-summary {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .category-summary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .summary-gaming::before { background: var(--accent-coral); }
+    .summary-ai::before { background: var(--accent-blue); }
+
+    .category-summary .summary-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .summary-gaming .summary-label { color: var(--accent-coral); }
+    .summary-ai .summary-label { color: var(--accent-blue); }
+
+    .category-summary .summary-text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    /* 精选文章列表 */
+    .curated-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .curated-item {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      opacity: 0;
+      transform: translateX(-10px);
+      animation: fadeInRight 0.5s ease forwards;
+    }
+
+    .curated-item:nth-child(1) { animation-delay: 0.1s; }
+    .curated-item:nth-child(2) { animation-delay: 0.15s; }
+    .curated-item:nth-child(3) { animation-delay: 0.2s; }
+    .curated-item:nth-child(4) { animation-delay: 0.25s; }
+    .curated-item:nth-child(5) { animation-delay: 0.3s; }
+
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .curated-item:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-hover);
+      border-color: transparent;
+    }
+
+    .curated-item:hover .curated-title {
+      color: var(--accent-coral);
+    }
+
+    .curated-ai:hover .curated-title {
+      color: var(--accent-blue);
+    }
+
+    .curated-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--border-light);
+      min-width: 40px;
+      text-align: center;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.3s;
+    }
+
+    .curated-item:hover .curated-number {
+      color: var(--accent-coral);
+    }
+
+    .curated-ai:hover .curated-number {
+      color: var(--accent-blue);
+    }
+
+    .curated-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .curated-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .curated-source {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .source-tag-gaming {
+      background: #fceee9;
+      color: #c24a20;
+    }
+
+    .source-tag-ai {
+      background: #e8f2fc;
+      color: #2a6db0;
+    }
+
+    .curated-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .curated-excerpt {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .curated-arrow {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--border-light);
+      transition: all 0.3s;
+    }
+
+    .curated-item:hover .curated-arrow {
+      color: var(--text-secondary);
+      transform: translateX(4px);
+    }
+
     /* 响应式 */
     @media (max-width: 640px) {
       .header {
@@ -517,6 +697,23 @@
         flex-direction: column;
         gap: 15px;
       }
+
+      .category-summary {
+        padding: 24px 20px;
+      }
+
+      .curated-item {
+        padding: 16px 18px;
+      }
+
+      .curated-number {
+        font-size: 22px;
+        min-width: 30px;
+      }
+
+      .curated-title {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -534,263 +731,193 @@
   <main class="container">
     
     <section class="content-section">
-      <div class="section-badge badge-gaming">
-        
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h2M15 13h2"/></svg>
-    
+      <span class="section-badge badge-gaming">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h2M15 13h2"/></svg>
         游戏行业
-      </div>
+      </span>
 
       <div class="section-header">
-        <h2 class="section-title">Gaming</h2>
-        <span class="section-subtitle">游戏开发 · 行业动态</span>
+        <h2 class="section-title">本周精选</h2>
       </div>
 
-      <div class="articles-grid">
-        
-    <div class="article-card featured has-image">
-      
-      <img src="https://image.gcores.com/a18e20f8ef61cf61ee69b6f469a9d81c-1920-1080.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90" alt="喜加一：《暗黑破坏神Ⅳ》国服现已开启限时免费领取本体活动" class="article-image" onerror="this.style.display='none';this.parentElement.classList.remove('has-image')">
-    
-      <div class="featured-inner">
-        <div class="article-content">
-          <div class="article-meta">
-            <span class="article-source source-gaming">机核</span>
-            <span class="article-time">35 分钟前</span>
-          </div>
-          <h3 class="article-title">喜加一：《暗黑破坏神Ⅳ》国服现已开启限时免费领取本体活动</h3>
-          <p class="article-excerpt">即日起至5月27日23:59，玩家 可免费领取《暗黑破坏神Ⅳ》国服基础游戏 （原价128元，现价0元）。一键领取，永久畅玩，丰富的史诗级主线战役与庞大且充满细节的开放世界内容等你探索。 <内嵌内容，请前往机核查看> 同时，源自中国神话的神秘坐骑“避水金睛兽”来到庇护之地，乘风破浪，踏碎虚空。 参与“古树秘宝”与“古树低语”活动，解锁国服限定皮肤、坐骑。邀请好友可获得抽奖机会，满级即送圣骑士全新神话主题皮肤“九天玄女”！ 为表示对现有玩家的感谢，凡在4月28日之前已拥有任意版本国服《暗黑破坏神Ⅳ》</p>
-          <div class="article-tags">
-            <span class="tag">游戏</span>
-          </div>
-          <a href="https://www.gcores.com/articles/213858" target="_blank" class="read-more">
-            阅读原文
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+      <div class="curated-section">
+        <div class="category-summary summary-gaming">
+          <div class="summary-label">本期摘要</div>
+          <p class="summary-text">暴雪回归成为本周最大看点，《暗黑破坏神Ⅳ》国服正式免费开放，标志着网易与暴雪合作重启。与此同时，游戏圈IP收购热潮持续，505母公司收购《明末：渊虚之羽》显示独立游戏的商业价值正在被重新审视。硬件方面，PCIe 5.0固态硬盘让游戏Loading时代加速消亡，而Steam Controller即将发售则延续了Valve对硬件创新的执着。</p>
         </div>
+        <div class="curated-list">
+          
+    <a href="https://www.gcores.com/articles/213858" target="_blank" class="curated-item ">
+      <span class="curated-number">01</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-gaming">机核</span>
+        </div>
+        <div class="curated-title">喜加一：《暗黑破坏神Ⅳ》国服现已开启限时免费领取本体活动</div>
+        <div class="curated-excerpt">暴雪娱乐宣布《暗黑破坏神Ⅳ》国服免费开放，网易与暴雪联合运营。游戏保留原有赛季机制，玩家可免费体验全部剧情内容。</div>
       </div>
-    </div>
-  <a href="https://www.gcores.com/articles/213856" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-gaming">机核</span>
-        <span class="article-time">1 小时前</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.gcores.com/articles/213853" target="_blank" class="curated-item ">
+      <span class="curated-number">02</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-gaming">机核</span>
+        </div>
+        <div class="curated-title">505游戏母公司现已收购《明末：渊虚之羽》IP</div>
+        <div class="curated-excerpt">Digital Bros以3200万元收购成都灵泽科技手中《明末：渊虚之羽》全部知识产权，游戏自2025年7月发售以来全球销量已破百万份。</div>
       </div>
-      <h3 class="article-title">新版《生化危机》电影定于9月18日上映，官方网站现已上线</h3>
-      <p class="article-excerpt">今日，新版《生化危机》电影的官方网站正式上线，由索尼影业负责发行。目前网站上还没有太多内容，但它确实公布了电影的官方标志，同时也确认了影片将于2026年9月18日上映。 新版《生化危机》电影将由扎克·克雷格（Zachary Michael Cregger）执导，他曾凭借2022年的恐怖电影《野蛮人》和《凶器》而备受关注。 ]]></p>
-      <div class="article-tags">
-        <span class="tag">游戏</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.gcores.com/articles/213845" target="_blank" class="curated-item ">
+      <span class="curated-number">03</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-gaming">机核</span>
+        </div>
+        <div class="curated-title">什么硬件，能让游戏Loading界面快速消失？</div>
+        <div class="curated-excerpt">长江存储致态PCIe 5.0固态硬盘测试：《博德之门3》读图速度提升近30%，NVIDIA RTX IO与DirectStorage API正改变游戏加载体验。</div>
       </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://image.gcores.com/dd9708dddd49358142d200682492cffa-1206-803.jpeg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://www.gcores.com/articles/213855" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-gaming">机核</span>
-        <span class="article-time">1 小时前</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.gcores.com/articles/213855" target="_blank" class="curated-item ">
+      <span class="curated-number">04</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-gaming">机核</span>
+        </div>
+        <div class="curated-title">《冲就完事模拟器2》"星球大战"联动DLC正式宣布</div>
+        <div class="curated-excerpt">Fun棱镜工作室发布全新DLC"星际大战特别版"，收录7个全新星球场景，包含千年隼号驾驶舱等标志性地点，致敬星战40年经典。</div>
       </div>
-      <h3 class="article-title">《冲就完事模拟器2》“星球大战”联动DLC正式宣布</h3>
-      <p class="article-excerpt">《冲就完事模拟器2》“星球大战”联动DLC正式宣布。在本次内容中，玩家可扮演P0-W2，亲历原版《星球大战》三部曲的多个传奇事件——这位身份低微的五级清洁机器人，将在污垢横行的宇宙中踏上反叛之路！挥动喷射原力，横扫六大标志性场景与飞船中的帝国污秽，书写这部荡气回肠的除污史诗。 一次再普通不过的清洁任务，却急转直下：你先被帝国强征，替他们干起脏活，随后又要为反抗军联盟扫清道路。毕竟，反叛就建立在希望与洗涤之上。区区污垢，怎敌你腰间的喷水爆能手枪？这把水枪威力十足，银河系里最顽固的油污也难逃一劫。瞄</p>
-      <div class="article-tags">
-        <span class="tag">游戏</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.gcores.com/articles/213856" target="_blank" class="curated-item ">
+      <span class="curated-number">05</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-gaming">机核</span>
+        </div>
+        <div class="curated-title">新版《生化危机》电影定于9月18日上映，官方网站现已上线</div>
+        <div class="curated-excerpt">Netflix确认拍摄《生化危机》系列电视剧第二季，延续双时间线叙事结构并加入更多经典病毒变异体，收视超预期推动续订。</div>
       </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://image.gcores.com/8ae6a6f9900bd00cf561b87ceb01f385-920-430.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://www.gcores.com/articles/213854" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-gaming">机核</span>
-        <span class="article-time">1 小时前</span>
-      </div>
-      <h3 class="article-title">Steam Controller将于5月4日发售，售价99美元</h3>
-      <p class="article-excerpt">V社于日前宣布，Steam Controller 将于5月4日发售，售价99美元（约合675人民币）。V社表示，玩家终于可以上手，也令他们十分激动。 大家可以在 产品的官方页面 上获取关于 Steam Controller 的更多信息，以下是来自官方的介绍： Steam Controller 配备了让玩家畅玩 Steam 库里所有游戏所需的全部输入，不论您希望在哪里玩。 PC？ 行。 笔记本？ 没问题。 Steam Deck、Steam Machine 和 Steam Frame？ 全都支持。 </p>
-      <div class="article-tags">
-        <span class="tag">游戏</span>
-      </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://image.gcores.com/41fc043f614aeeb1a27533a185c45e5b-940-378.gif?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://www.theverge.com/tech/918115/steam-controller-2026-pc-deck-machine-hands-on-features" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-gaming">The Verge 游戏</span>
-        <span class="article-time">9 小时前</span>
-      </div>
-      <h3 class="article-title">为什么Steam控制器是（也不是）一件大事</h3>
-      <p class="article-excerpt">大多数PC游戏玩家已经拥有了他们喜欢与Steam一起使用的控制器-索尼DualSense、8BitDo Ultimate、任天堂Switch Pro或其他产品。这种喜爱的一部分来自Steam将它们视为“本地”控制器。他们可以做的事情</p>
-      <div class="article-tags">
-        <span class="tag">游戏</span>
-      </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/268455_Steam_Controller_AKrales_0042.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+        </div>
       </div>
     </section>
 
     <section class="content-section">
-      <div class="section-badge badge-ai">
-        
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-    
+      <span class="section-badge badge-ai">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         AI 科技
-      </div>
+      </span>
 
       <div class="section-header">
-        <h2 class="section-title">AI</h2>
-        <span class="section-subtitle">人工智能 · 技术前沿</span>
+        <h2 class="section-title">本周精选</h2>
       </div>
 
-      <div class="articles-grid">
-        
-    <div class="article-card featured has-image">
-      
-      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/Screenshot-2026-04-27-at-4.55.32PM.png?quality=90&#038;strip=all&#038;crop=0,0,100,100" alt="谷歌正在测试YouTube的人工智能聊天机器人搜索" class="article-image" onerror="this.style.display='none';this.parentElement.classList.remove('has-image')">
-    
-      <div class="featured-inner">
-        <div class="article-content">
-          <div class="article-meta">
-            <span class="article-source source-ai">The Verge AI</span>
-            <span class="article-time">2 小时前</span>
-          </div>
-          <h3 class="article-title">谷歌正在测试YouTube的人工智能聊天机器人搜索</h3>
-          <p class="article-excerpt">谷歌正在为YouTube尝试类似人工智能模式的搜索体验。该公司现在正在测试“一种在YouTube上进行搜索的新方式，感觉更像是一次对话” ，搜索结果包括长视频、YouTube短片和</p>
-          <div class="article-tags">
-            <span class="tag">AI</span>
-          </div>
-          <a href="https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search" target="_blank" class="read-more">
-            阅读原文
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+      <div class="curated-section">
+        <div class="category-summary summary-ai">
+          <div class="summary-label">本期摘要</div>
+          <p class="summary-text">AI领域的权力格局正在经历深刻重组。OpenAI与微软的AGI排他协议正式瓦解，OpenAI获得了使用任意云服务商的权利；与此同时，Google面临内部压力，600名员工联名抗议将AI用于军事用途。另一边，前DeepMind研究员创立的Ineffable Intelligence获得11亿美元融资，显示AI基础设施仍是资本追逐的热点。</p>
         </div>
+        <div class="curated-list">
+          
+    <a href="https://www.theverge.com/ai-artificial-intelligence/918981/openai-microsoft-renegotiate-contract" target="_blank" class="curated-item curated-ai">
+      <span class="curated-number">01</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-ai">The Verge AI</span>
+        </div>
+        <div class="curated-title">OpenAI与微软AGI协议终止：排他性合作画上句号</div>
+        <div class="curated-excerpt">微软与OpenAI的AGI特殊条款废除，OpenAI可使用任何云服务商，收入分成改为2030年截止，标志着两家公司的排他性合作关系大幅弱化。</div>
       </div>
-    </div>
-  <a href="https://www.technologyreview.com/2026/04/27/1136466/elon-musk-and-sam-altman-are-going-to-court-over-openais-future/" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-ai">MIT Tech Review</span>
-        <span class="article-time">4 小时前</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" target="_blank" class="curated-item curated-ai">
+      <span class="curated-number">02</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-ai">TechCrunch</span>
+        </div>
+        <div class="curated-title">DeepMind前核心成员创立AI公司，获11亿美元融资</div>
+        <div class="curated-excerpt">David Silver创立的Ineffable Intelligence获红杉资本和光速创投领投11亿美元，估值51亿美元，目标是通过强化学习打造不依赖人类数据的超级AI。</div>
       </div>
-      <h3 class="article-title">埃隆·马斯克（ Elon Musk ）和萨姆·奥尔特曼（ Sam Altman ）将就OpenA</h3>
-      <p class="article-excerpt">经过长达一年的法律纠纷，埃隆·马斯克(Elon Musk)和OpenAI首席执行官萨姆·奥尔特曼(Sam Altman)本周将在北加州接受审判，此案可能会产生全面的后果。在OpenAI备受期待的IPO之前，法院可以裁定</p>
-      <div class="article-tags">
-        <span class="tag">AI</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.theverge.com/ai-artificial-intelligence/919326/google-ai-pentagon-classified-letter" target="_blank" class="curated-item curated-ai">
+      <span class="curated-number">03</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-ai">The Verge AI</span>
+        </div>
+        <div class="curated-title">600名Google员工联名要求拒绝五角大楼军事AI请求</div>
+        <div class="curated-excerpt">超过600名Google员工联名致信CEO，要求拒绝将Google AI模型用于机密军事用途，员工担心重蹈Project Maven覆辙。</div>
       </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://arstechnica.com/security/2026/04/open-source-package-with-1-million-monthly-downloads-stole-user-credentials/" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-ai">Ars Technica AI</span>
-        <span class="article-time">5 小时前</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search" target="_blank" class="curated-item curated-ai">
+      <span class="curated-number">04</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-ai">The Verge AI</span>
+        </div>
+        <div class="curated-title">Google正在YouTube上测试AI聊天搜索功能</div>
+        <div class="curated-excerpt">Google正在测试YouTube AI搜索功能，允许用户用自然语言查找视频内容并直接跳转到精选片段，处于有限测试阶段。</div>
       </div>
-      <h3 class="article-title">每月下载100万次的开源软件包窃取了用户凭据</h3>
-      <p class="article-excerpt">点击阅读原文...</p>
-      <div class="article-tags">
-        <span class="tag">AI</span>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <a href="https://www.theverge.com/tech/919411/canonical-ubuntu-linux-ai-features" target="_blank" class="curated-item curated-ai">
+      <span class="curated-number">05</span>
+      <div class="curated-content">
+        <div class="curated-meta">
+          <span class="curated-source source-tag-ai">The Verge AI</span>
+        </div>
+        <div class="curated-title">Ubuntu宣布2026年AI功能计划：本地推理优先，不做AI产品</div>
+        <div class="curated-excerpt">Canonical宣布为Ubuntu添加AI功能，但强调不会成为AI产品，优先考虑模型透明度和本地推理，避免用AI使用量衡量员工绩效。</div>
       </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://cdn.arstechnica.net/wp-content/uploads/2025/06/browser-security-threat-1152x627.jpg" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://www.theverge.com/tech/919411/canonical-ubuntu-linux-ai-features" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-ai">The Verge AI</span>
-        <span class="article-time">6 小时前</span>
-      </div>
-      <h3 class="article-title">Canonical制定了Ubuntu Linux中的人工智能计划</h3>
-      <p class="article-excerpt">最受欢迎的Linux发行版之一即将获得大量的人工智能功能。据Phoronix报道， Ubuntu开发商Canonical的工程副总裁Jon Seager周一分享了一篇博客文章，详细介绍了将AI功能添加到Linux</p>
-      <div class="article-tags">
-        <span class="tag">AI</span>
-      </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK_414_AI_CHATBOT_R2_CVirginia_D.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
-  <a href="https://techcrunch.com/2026/04/27/letterboxd-sale-film-social-media-semafor-versant-ankler/" target="_blank" class="article-card with-thumb">
-    
-    <div class="article-content">
-      <div class="article-meta">
-        <span class="article-source source-ai">TechCrunch</span>
-        <span class="article-time">6 小时前</span>
-      </div>
-      <h3 class="article-title">据报道，电影爱好者的社交平台Letterboxd正在寻找新主人</h3>
-      <p class="article-excerpt">根据Semafor的说法， Letterboxd的潜在买家包括CNBC和MS NOW的母公司Versant ，以及好莱坞媒体公司The Ankler。</p>
-      <div class="article-tags">
-        <span class="tag">AI</span>
-      </div>
-    </div>
-    
-    <div class="article-thumb">
-      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="" onerror="this.parentElement.style.display='none'">
-    </div>
-  
-  
-  </a>
+      <svg class="curated-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+        </div>
       </div>
     </section>
 
     <section class="content-section">
       <div class="section-badge badge-golf">
-        
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-    
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         高尔夫
       </div>
 
       <div class="section-header">
         <h2 class="section-title">Golf</h2>
-        <span class="section-subtitle">技巧教学 · 巡回赛况</span>
+        <span class="section-subtitle">巡回赛况 · 技巧教学</span>
       </div>
 
       <div class="articles-grid">
         
     <div class="article-card featured has-image">
       
-      <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80" alt="资料来源： LIV Golf将推迟新奥尔良站" class="article-image" onerror="this.style.display='none';this.parentElement.classList.remove('has-image')">
+      <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=800&q=80" alt="资料来源： LIV Golf将推迟新奥尔良站" class="article-image" onerror="this.style.display='none';this.parentElement.classList.remove('has-image')">
     
       <div class="featured-inner">
         <div class="article-content">
@@ -815,7 +942,7 @@
     <div class="article-content">
       <div class="article-meta">
         <span class="article-source source-golf">ESPN 高尔夫</span>
-        <span class="article-time">3 小时前</span>
+        <span class="article-time">4 小时前</span>
       </div>
       <h3 class="article-title">奥克兰山在火灾后开设了新的会所</h3>
       <p class="article-excerpt">奥克兰山乡村俱乐部（ Oakland Hills Country Club ）是九个PGA大满贯赛和2004年莱德杯的举办地，它开设了一座庄严的钢结构建筑，以取代四年多前被大火烧毁的百年会所。</p>
@@ -835,7 +962,7 @@
     <div class="article-content">
       <div class="article-meta">
         <span class="article-source source-golf">Golf.com</span>
-        <span class="article-time">6 小时前</span>
+        <span class="article-time">7 小时前</span>
       </div>
       <h3 class="article-title">10件我们喜爱的母亲节礼物，价格不到$ 50</h3>
       <p class="article-excerpt">如果您正在寻找今年不会亏本的周到母亲节礼物，这些令人愉悦的物品一定会让您满意。我们喜欢的低于50 $的10个母亲节礼物首先出现在高尔夫球场上。</p>
@@ -855,7 +982,7 @@
     <div class="article-content">
       <div class="article-meta">
         <span class="article-source source-golf">Golf.com</span>
-        <span class="article-time">6 小时前</span>
+        <span class="article-time">7 小时前</span>
       </div>
       <h3 class="article-title">您可以（实际上！ ）从Rory McIlroy的秋千中复制的6件事</h3>
       <p class="article-excerpt">罗里·麦克罗伊（ Rory McIlroy ）刚刚获得美国大师赛的最新胜利，是高尔夫界的佼佼者。以下是六届大奖得主要复制的六件事。你可以（实际上！ ）从Rory McIlroy的挥杆中复制的6件事首先出现在高尔夫上。</p>
@@ -875,7 +1002,7 @@
     <div class="article-content">
       <div class="article-meta">
         <span class="article-source source-golf">Golf.com</span>
-        <span class="article-time">6 小时前</span>
+        <span class="article-time">7 小时前</span>
       </div>
       <h3 class="article-title">雪佛龙获胜后， Nelly Korda夺回世界排名第一的位置</h3>
       <p class="article-excerpt">在雪佛龙锦标赛中获胜后， Nelly Korda重新夺回了劳力士女子世界高尔夫排名榜的榜首位置。雪佛龙获胜后，内莉·科尔达（ Nelly Korda ）夺回了世界排名第一的位置。</p>
